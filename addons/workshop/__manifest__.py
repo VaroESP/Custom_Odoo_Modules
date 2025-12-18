@@ -1,0 +1,21 @@
+{
+    "name": "Workshop",
+    "version": "18.0",
+    "author": "varoESP",
+    "category": "Services",
+    "depends": ["base", "product", "hr", "stock"],
+    "data": [
+        "security/ir.model.access.csv",
+        "reports/workshop_maintenance_report.xml",
+        "views/workshop_customer_views.xml",
+        "views/workshop_employee_views.xml",
+        "views/workshop_product_views.xml",
+        "views/workshop_vehicle_views.xml",
+        "views/workshop_maintenance_views.xml",
+        "views/workshop_menus.xml",
+    ],
+    "demo": ["demo/workshop_demo.xml"],
+    "installable": True,
+    "application": True,
+    "license": "LGPL-3",
+}

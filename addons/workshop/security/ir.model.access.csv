@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+workshop.access_workshop_customer,access_workshop_customer,base.model_res_partner,base.group_user,1,1,1,1
+workshop.access_workshop_employee,access_workshop_employee,hr.model_hr_employee,base.group_user,1,1,1,1
+workshop.access_workshop_product,access_workshop_product,product.model_product_template,base.group_user,1,1,1,1
+workshop.access_workshop_vehicle,access_workshop_vehicle,workshop.model_workshop_vehicle,base.group_user,1,1,1,1
+workshop.access_workshop_maintenance,access_workshop_maintenance,workshop.model_workshop_maintenance,base.group_user,1,1,1,1
+workshop.access_workshop_maintenance_line,access_workshop_maintenance_line,workshop.model_workshop_maintenance_line,base.group_user,1,1,1,1

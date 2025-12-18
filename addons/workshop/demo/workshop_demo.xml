@@ -1,0 +1,2724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Employees -->
+        <!-- Workshop Manager -->
+        <record id="employee_workshop_manager" model="hr.employee">
+            <field name="name">Carlos Rodríguez</field>
+            <field name="email">carlos.rodriguez@taller.com</field>
+            <field name="phone">+34 911 234 567</field>
+            <field name="is_workshop_employee">True</field>
+            <field name="employee_type">workshop_manager</field>
+            <field name="is_available">True</field>
+            <field name="street">Calle Taller, 1</field>
+            <field name="postal_code">28001</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <!-- Mechanics -->
+        <record id="employee_mechanic_1" model="hr.employee">
+            <field name="name">Miguel Sánchez</field>
+            <field name="email">miguel.sanchez@taller.com</field>
+            <field name="phone">+34 911 234 568</field>
+            <field name="is_workshop_employee">True</field>
+            <field name="employee_type">mechanic</field>
+            <field name="is_available">True</field>
+            <field name="street">Calle Mecánica, 2</field>
+            <field name="postal_code">28002</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="employee_mechanic_2" model="hr.employee">
+            <field name="name">Ana López</field>
+            <field name="email">ana.lopez@taller.com</field>
+            <field name="phone">+34 911 234 569</field>
+            <field name="is_workshop_employee">True</field>
+            <field name="employee_type">mechanic</field>
+            <field name="is_available">True</field>
+            <field name="street">Calle Motor, 3</field>
+            <field name="postal_code">28003</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="employee_mechanic_3" model="hr.employee">
+            <field name="name">David Martínez</field>
+            <field name="email">david.martinez@taller.com</field>
+            <field name="phone">+34 911 234 570</field>
+            <field name="is_workshop_employee">True</field>
+            <field name="employee_type">mechanic</field>
+            <field name="is_available">True</field>
+            <field name="street">Calle Pistón, 4</field>
+            <field name="postal_code">28004</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <!-- Administrative -->
+        <record id="employee_admin_1" model="hr.employee">
+            <field name="name">Laura García</field>
+            <field name="email">laura.garcia@taller.com</field>
+            <field name="phone">+34 911 234 571</field>
+            <field name="is_workshop_employee">True</field>
+            <field name="employee_type">administrative</field>
+            <field name="is_available">True</field>
+            <field name="street">Calle Administración, 5</field>
+            <field name="postal_code">28005</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="employee_admin_2" model="hr.employee">
+            <field name="name">Sofía Ramírez</field>
+            <field name="email">sofia.ramirez@taller.com</field>
+            <field name="phone">+34 911 234 572</field>
+            <field name="is_workshop_employee">True</field>
+            <field name="employee_type">administrative</field>
+            <field name="is_available">True</field>
+            <field name="street">Calle Recepción, 6</field>
+            <field name="postal_code">28006</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <!-- Products - Type: consu (10 products) -->
+        <record id="product_oil_5w30" model="product.product">
+            <field name="default_code">ACEITE-5W30</field>
+            <field name="name">Aceite Motor 5W30 Sintético 5L</field>
+            <field name="type">consu</field>
+            <field name="list_price">45.90</field>
+            <field name="standard_price">28.50</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_oil_filter" model="product.product">
+            <field name="default_code">FILTRO-ACEITE</field>
+            <field name="name">Filtro de Aceite Universal</field>
+            <field name="type">consu</field>
+            <field name="list_price">12.50</field>
+            <field name="standard_price">7.80</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_air_filter" model="product.product">
+            <field name="default_code">FILTRO-AIRE</field>
+            <field name="name">Filtro de Aire</field>
+            <field name="type">consu</field>
+            <field name="list_price">18.75</field>
+            <field name="standard_price">11.20</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_cabin_filter" model="product.product">
+            <field name="default_code">FILTRO-HABITACULO</field>
+            <field name="name">Filtro de Habitáculo Carbón Activado</field>
+            <field name="type">consu</field>
+            <field name="list_price">22.90</field>
+            <field name="standard_price">14.50</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_spark_plugs" model="product.product">
+            <field name="default_code">BUJIAS-4U</field>
+            <field name="name">Juego Bujías Iridium (4 unidades)</field>
+            <field name="type">consu</field>
+            <field name="list_price">68.50</field>
+            <field name="standard_price">42.30</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_brake_pads" model="product.product">
+            <field name="default_code">PASTILLAS-DEL</field>
+            <field name="name">Pastillas de Freno Delanteras</field>
+            <field name="type">consu</field>
+            <field name="list_price">89.90</field>
+            <field name="standard_price">55.60</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_brake_disks" model="product.product">
+            <field name="default_code">DISCOS-DEL</field>
+            <field name="name">Discos de Freno Delanteros (Par)</field>
+            <field name="type">consu</field>
+            <field name="list_price">145.00</field>
+            <field name="standard_price">89.90</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_battery_60ah" model="product.product">
+            <field name="default_code">BATERIA-60AH</field>
+            <field name="name">Batería 60Ah 540A</field>
+            <field name="type">consu</field>
+            <field name="list_price">112.00</field>
+            <field name="standard_price">68.75</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_timing_belt" model="product.product">
+            <field name="default_code">CORREA-DIST</field>
+            <field name="name">Kit Correa de Distribución</field>
+            <field name="type">consu</field>
+            <field name="list_price">185.50</field>
+            <field name="standard_price">115.80</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="product_wipers" model="product.product">
+            <field name="default_code">ESCOBILLAS</field>
+            <field name="name">Juego Escobillas Limpiaparabrisas</field>
+            <field name="type">consu</field>
+            <field name="list_price">34.90</field>
+            <field name="standard_price">21.40</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <!-- Products - Type: service (15 services) -->
+        <record id="service_oil_change" model="product.product">
+            <field name="default_code">SERV-CAMBIO-ACEITE</field>
+            <field name="name">Cambio de Aceite y Filtro</field>
+            <field name="type">service</field>
+            <field name="list_price">25.00</field>
+            <field name="standard_price">15.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_air_filter_change" model="product.product">
+            <field name="default_code">SERV-FILTRO-AIRE</field>
+            <field name="name">Cambio Filtro de Aire</field>
+            <field name="type">service</field>
+            <field name="list_price">15.00</field>
+            <field name="standard_price">10.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_cabin_filter_change" model="product.product">
+            <field name="default_code">SERV-FILTRO-HABIT</field>
+            <field name="name">Cambio Filtro de Habitáculo</field>
+            <field name="type">service</field>
+            <field name="list_price">18.00</field>
+            <field name="standard_price">12.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_spark_plug_change" model="product.product">
+            <field name="default_code">SERV-CAMBIO-BUJIAS</field>
+            <field name="name">Cambio de Bujías</field>
+            <field name="type">service</field>
+            <field name="list_price">35.00</field>
+            <field name="standard_price">25.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_brake_pads_change" model="product.product">
+            <field name="default_code">SERV-PASTILLAS-FRENO</field>
+            <field name="name">Cambio Pastillas de Freno (Delanteras)</field>
+            <field name="type">service</field>
+            <field name="list_price">45.00</field>
+            <field name="standard_price">30.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_brake_disks_change" model="product.product">
+            <field name="default_code">SERV-DISCOS-FRENO</field>
+            <field name="name">Cambio Discos de Freno (Delanteros)</field>
+            <field name="type">service</field>
+            <field name="list_price">85.00</field>
+            <field name="standard_price">60.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_battery_change" model="product.product">
+            <field name="default_code">SERV-CAMBIO-BATERIA</field>
+            <field name="name">Cambio de Batería</field>
+            <field name="type">service</field>
+            <field name="list_price">20.00</field>
+            <field name="standard_price">15.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_timing_belt_change" model="product.product">
+            <field name="default_code">SERV-CORREA-DIST</field>
+            <field name="name">Cambio Correa de Distribución</field>
+            <field name="type">service</field>
+            <field name="list_price">180.00</field>
+            <field name="standard_price">120.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_wipers_change" model="product.product">
+            <field name="default_code">SERV-ESCOBILLAS</field>
+            <field name="name">Cambio Escobillas Limpiaparabrisas</field>
+            <field name="type">service</field>
+            <field name="list_price">12.00</field>
+            <field name="standard_price">8.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_wheel_alignment" model="product.product">
+            <field name="default_code">SERV-ALINEACION</field>
+            <field name="name">Alineación y Balanceo</field>
+            <field name="type">service</field>
+            <field name="list_price">55.00</field>
+            <field name="standard_price">35.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_tire_change" model="product.product">
+            <field name="default_code">SERV-CAMBIO-NEUMATICOS</field>
+            <field name="name">Cambio de Neumáticos (4 unidades)</field>
+            <field name="type">service</field>
+            <field name="list_price">60.00</field>
+            <field name="standard_price">40.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_diagnostic" model="product.product">
+            <field name="default_code">SERV-DIAGNOSTICO</field>
+            <field name="name">Diagnóstico Computarizado</field>
+            <field name="type">service</field>
+            <field name="list_price">40.00</field>
+            <field name="standard_price">25.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_air_conditioning" model="product.product">
+            <field name="default_code">SERV-AIRE-ACOND</field>
+            <field name="name">Revisión Aire Acondicionado</field>
+            <field name="type">service</field>
+            <field name="list_price">50.00</field>
+            <field name="standard_price">35.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_clutch_change" model="product.product">
+            <field name="default_code">SERV-EMBRAGUE</field>
+            <field name="name">Cambio de Embrague</field>
+            <field name="type">service</field>
+            <field name="list_price">250.00</field>
+            <field name="standard_price">180.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <record id="service_suspension_review" model="product.product">
+            <field name="default_code">SERV-SUSPENSION</field>
+            <field name="name">Revisión de Suspensión</field>
+            <field name="type">service</field>
+            <field name="list_price">65.00</field>
+            <field name="standard_price">45.00</field>
+            <field name="is_workshop_product">True</field>
+        </record>
+
+        <!-- Individual Customers (5 customers) -->
+        <record id="customer_individual_1" model="res.partner">
+            <field name="name">Juan Pérez Martínez</field>
+            <field name="email">juan.perez@gmail.com</field>
+            <field name="phone">+34 600 111 222</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">individual</field>
+            <field name="vat">ESA12345674</field>
+            <field name="street">Avenida de la Libertad, 15</field>
+            <field name="postal_code">28010</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="customer_individual_2" model="res.partner">
+            <field name="name">María González López</field>
+            <field name="email">maria.gonzalez@hotmail.com</field>
+            <field name="phone">+34 600 222 333</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">individual</field>
+            <field name="vat">ESA12345674</field>
+            <field name="street">Calle Gran Vía, 42</field>
+            <field name="postal_code">28013</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="customer_individual_3" model="res.partner">
+            <field name="name">Carlos Ruiz Sánchez</field>
+            <field name="email">carlos.ruiz@yahoo.es</field>
+            <field name="phone">+34 600 333 444</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">individual</field>
+            <field name="vat">ESA12345674</field>
+            <field name="street">Plaza Mayor, 7</field>
+            <field name="postal_code">28012</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="customer_individual_4" model="res.partner">
+            <field name="name">Ana Fernández Díaz</field>
+            <field name="email">ana.fernandez@gmail.com</field>
+            <field name="phone">+34 600 444 555</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">individual</field>
+            <field name="vat">ESA12345674</field>
+            <field name="street">Calle Alcalá, 100</field>
+            <field name="postal_code">28009</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="customer_individual_5" model="res.partner">
+            <field name="name">Pedro Martínez Jiménez</field>
+            <field name="email">pedro.martinez@gmail.com</field>
+            <field name="phone">+34 600 555 666</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">individual</field>
+            <field name="vat">ESA12345674</field>
+            <field name="street">Paseo de la Castellana, 200</field>
+            <field name="postal_code">28046</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <!-- Company Customers (5 companies) -->
+        <record id="customer_company_1" model="res.partner">
+            <field name="name">Transportes Veloz S.L.</field>
+            <field name="email">info@transportesveloz.com</field>
+            <field name="phone">+34 913 456 789</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">company</field>
+            <field name="vat">ESA12345674</field>
+            <field name="is_company">True</field>
+            <field name="street">Polígono Industrial Norte, 25</field>
+            <field name="postal_code">28050</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="customer_company_2" model="res.partner">
+            <field name="name">Mensajería Express S.A.</field>
+            <field name="email">taller@mensajeriaexpress.com</field>
+            <field name="phone">+34 914 567 890</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">company</field>
+            <field name="vat">ESA12345674</field>
+            <field name="is_company">True</field>
+            <field name="street">Calle Logística, 10</field>
+            <field name="postal_code">28051</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="customer_company_3" model="res.partner">
+            <field name="name">Constructora Moderna S.L.</field>
+            <field name="email">taller@constructora-moderna.es</field>
+            <field name="phone">+34 915 678 901</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">company</field>
+            <field name="vat">ESA12345674</field>
+            <field name="is_company">True</field>
+            <field name="street">Avenida de la Construcción, 33</field>
+            <field name="postal_code">28052</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="customer_company_4" model="res.partner">
+            <field name="name">Floristería Primavera S.L.</field>
+            <field name="email">administracion@floristeriaprimavera.com</field>
+            <field name="phone">+34 916 789 012</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">company</field>
+            <field name="vat">ESA12345674</field>
+            <field name="is_company">True</field>
+            <field name="street">Calle Flores, 12</field>
+            <field name="postal_code">28053</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <record id="customer_company_5" model="res.partner">
+            <field name="name">Restaurante El Buen Sabor S.L.</field>
+            <field name="email">gerencia@elbuensabor.com</field>
+            <field name="phone">+34 917 890 123</field>
+            <field name="is_workshop_customer">True</field>
+            <field name="customer_type">company</field>
+            <field name="vat">ESA12345674</field>
+            <field name="is_company">True</field>
+            <field name="street">Plaza del Sol, 5</field>
+            <field name="postal_code">28054</field>
+            <field name="city">Madrid</field>
+            <field name="state_id" ref="base.state_es_m" />
+            <field name="country_id" ref="base.es" />
+        </record>
+
+        <!-- Vehicles for Individual Customers (3 vehicles each) -->
+        <!-- Customer Individual 1 -->
+        <record id="vehicle_indiv_1_1" model="workshop.vehicle">
+            <field name="plate">1234ABC</field>
+            <field name="brand">Toyota</field>
+            <field name="model">Corolla</field>
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">45000</field>
+        </record>
+
+        <record id="vehicle_indiv_1_2" model="workshop.vehicle">
+            <field name="plate">2345BCD</field>
+            <field name="brand">Honda</field>
+            <field name="model">CBR 650R</field>
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">12000</field>
+        </record>
+
+        <record id="vehicle_indiv_1_3" model="workshop.vehicle">
+            <field name="plate">3456CDE</field>
+            <field name="brand">Seat</field>
+            <field name="model">León</field>
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">78000</field>
+        </record>
+
+        <!-- Customer Individual 2 -->
+        <record id="vehicle_indiv_2_1" model="workshop.vehicle">
+            <field name="plate">4567DEF</field>
+            <field name="brand">BMW</field>
+            <field name="model">X3</field>
+            <field name="customer_id" ref="customer_individual_2" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">32000</field>
+        </record>
+
+        <record id="vehicle_indiv_2_2" model="workshop.vehicle">
+            <field name="plate">5678EFG</field>
+            <field name="brand">Yamaha</field>
+            <field name="model">MT-07</field>
+            <field name="customer_id" ref="customer_individual_2" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">8000</field>
+        </record>
+
+        <record id="vehicle_indiv_2_3" model="workshop.vehicle">
+            <field name="plate">6789FGH</field>
+            <field name="brand">Renault</field>
+            <field name="model">Clio</field>
+            <field name="customer_id" ref="customer_individual_2" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">56000</field>
+        </record>
+
+        <!-- Customer Individual 3 -->
+        <record id="vehicle_indiv_3_1" model="workshop.vehicle">
+            <field name="plate">7890GHI</field>
+            <field name="brand">Mercedes</field>
+            <field name="model">Clase A</field>
+            <field name="customer_id" ref="customer_individual_3" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">23000</field>
+        </record>
+
+        <record id="vehicle_indiv_3_2" model="workshop.vehicle">
+            <field name="plate">8901HIJ</field>
+            <field name="brand">Kawasaki</field>
+            <field name="model">Ninja 650</field>
+            <field name="customer_id" ref="customer_individual_3" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">15000</field>
+        </record>
+
+        <record id="vehicle_indiv_3_3" model="workshop.vehicle">
+            <field name="plate">9012IJK</field>
+            <field name="brand">Volkswagen</field>
+            <field name="model">Golf</field>
+            <field name="customer_id" ref="customer_individual_3" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">67000</field>
+        </record>
+
+        <!-- Customer Individual 4 -->
+        <record id="vehicle_indiv_4_1" model="workshop.vehicle">
+            <field name="plate">0123JKL</field>
+            <field name="brand">Audi</field>
+            <field name="model">A4</field>
+            <field name="customer_id" ref="customer_individual_4" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">41000</field>
+        </record>
+
+        <record id="vehicle_indiv_4_2" model="workshop.vehicle">
+            <field name="plate">1234KLM</field>
+            <field name="brand">Suzuki</field>
+            <field name="model">GSX-S 750</field>
+            <field name="customer_id" ref="customer_individual_4" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">9000</field>
+        </record>
+
+        <record id="vehicle_indiv_4_3" model="workshop.vehicle">
+            <field name="plate">2345LMN</field>
+            <field name="brand">Ford</field>
+            <field name="model">Focus</field>
+            <field name="customer_id" ref="customer_individual_4" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">89000</field>
+        </record>
+
+        <!-- Customer Individual 5 -->
+        <record id="vehicle_indiv_5_1" model="workshop.vehicle">
+            <field name="plate">3456MNO</field>
+            <field name="brand">Volvo</field>
+            <field name="model">XC60</field>
+            <field name="customer_id" ref="customer_individual_5" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">28000</field>
+        </record>
+
+        <record id="vehicle_indiv_5_2" model="workshop.vehicle">
+            <field name="plate">4567NOP</field>
+            <field name="brand">Ducati</field>
+            <field name="model">Monster 821</field>
+            <field name="customer_id" ref="customer_individual_5" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">11000</field>
+        </record>
+
+        <record id="vehicle_indiv_5_3" model="workshop.vehicle">
+            <field name="plate">5678OPQ</field>
+            <field name="brand">Opel</field>
+            <field name="model">Corsa</field>
+            <field name="customer_id" ref="customer_individual_5" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">72000</field>
+        </record>
+
+        <!-- Vehicles for Company Customers (5 vehicles each, all types) -->
+        <!-- Company 1 -->
+        <record id="vehicle_comp_1_1" model="workshop.vehicle">
+            <field name="plate">7890PQR</field>
+            <field name="brand">Mercedes</field>
+            <field name="model">Sprinter</field>
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">125000</field>
+        </record>
+
+        <record id="vehicle_comp_1_2" model="workshop.vehicle">
+            <field name="plate">8901QRS</field>
+            <field name="brand">Ford</field>
+            <field name="model">Transit</field>
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">98000</field>
+        </record>
+
+        <record id="vehicle_comp_1_3" model="workshop.vehicle">
+            <field name="plate">9012RST</field>
+            <field name="brand">Toyota</field>
+            <field name="model">Hilux</field>
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">76000</field>
+        </record>
+
+        <record id="vehicle_comp_1_4" model="workshop.vehicle">
+            <field name="plate">0123STU</field>
+            <field name="brand">Yamaha</field>
+            <field name="model">XTZ 250</field>
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">25000</field>
+        </record>
+
+        <record id="vehicle_comp_1_5" model="workshop.vehicle">
+            <field name="plate">1234TUV</field>
+            <field name="brand">Volkswagen</field>
+            <field name="model">Caddy</field>
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">65000</field>
+        </record>
+
+        <!-- Company 2 -->
+        <record id="vehicle_comp_2_1" model="workshop.vehicle">
+            <field name="plate">2345UVW</field>
+            <field name="brand">Iveco</field>
+            <field name="model">Daily</field>
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">142000</field>
+        </record>
+
+        <record id="vehicle_comp_2_2" model="workshop.vehicle">
+            <field name="plate">3456VWX</field>
+            <field name="brand">Piaggio</field>
+            <field name="model">Ape</field>
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_category">other</field>
+            <field name="kms">45000</field>
+        </record>
+
+        <record id="vehicle_comp_2_3" model="workshop.vehicle">
+            <field name="plate">4567WXY</field>
+            <field name="brand">Honda</field>
+            <field name="model">SH 125i</field>
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">32000</field>
+        </record>
+
+        <record id="vehicle_comp_2_4" model="workshop.vehicle">
+            <field name="plate">5678XYZ</field>
+            <field name="brand">Renault</field>
+            <field name="model">Kangoo</field>
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">88000</field>
+        </record>
+
+        <record id="vehicle_comp_2_5" model="workshop.vehicle">
+            <field name="plate">6789YZA</field>
+            <field name="brand">Peugeot</field>
+            <field name="model">Partner</field>
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">71000</field>
+        </record>
+
+        <!-- Company 3 -->
+        <record id="vehicle_comp_3_1" model="workshop.vehicle">
+            <field name="plate">7890ZAB</field>
+            <field name="brand">MAN</field>
+            <field name="model">TGM</field>
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">198000</field>
+        </record>
+
+        <record id="vehicle_comp_3_2" model="workshop.vehicle">
+            <field name="plate">8901ABC</field>
+            <field name="brand">Caterpillar</field>
+            <field name="model">Excavator 320</field>
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_category">other</field>
+            <field name="kms">56000</field>
+        </record>
+
+        <record id="vehicle_comp_3_3" model="workshop.vehicle">
+            <field name="plate">9012BCD</field>
+            <field name="brand">KTM</field>
+            <field name="model">390 Duke</field>
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">18000</field>
+        </record>
+
+        <record id="vehicle_comp_3_4" model="workshop.vehicle">
+            <field name="plate">0123CDE</field>
+            <field name="brand">Toyota</field>
+            <field name="model">Land Cruiser</field>
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">92000</field>
+        </record>
+
+        <record id="vehicle_comp_3_5" model="workshop.vehicle">
+            <field name="plate">1234DEF</field>
+            <field name="brand">Nissan</field>
+            <field name="model">Navara</field>
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">67000</field>
+        </record>
+
+        <!-- Company 4 -->
+        <record id="vehicle_comp_4_1" model="workshop.vehicle">
+            <field name="plate">2345EFG</field>
+            <field name="brand">Citroën</field>
+            <field name="model">Jumpy</field>
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">54000</field>
+        </record>
+
+        <record id="vehicle_comp_4_2" model="workshop.vehicle">
+            <field name="plate">3456FGH</field>
+            <field name="brand">Vespa</field>
+            <field name="model">Primavera</field>
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">12000</field>
+        </record>
+
+        <record id="vehicle_comp_4_3" model="workshop.vehicle">
+            <field name="plate">4567GHI</field>
+            <field name="brand">Fiat</field>
+            <field name="model">Ducato</field>
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">103000</field>
+        </record>
+
+        <record id="vehicle_comp_4_4" model="workshop.vehicle">
+            <field name="plate">5678HIJ</field>
+            <field name="brand">Kymco</field>
+            <field name="model">Agility 125</field>
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">22000</field>
+        </record>
+
+        <record id="vehicle_comp_4_5" model="workshop.vehicle">
+            <field name="plate">6789IJK</field>
+            <field name="brand">Volkswagen</field>
+            <field name="model">Tiguan</field>
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">38000</field>
+        </record>
+
+        <!-- Company 5 -->
+        <record id="vehicle_comp_5_1" model="workshop.vehicle">
+            <field name="plate">7890JKL</field>
+            <field name="brand">Renault</field>
+            <field name="model">Trafic</field>
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">89000</field>
+        </record>
+
+        <record id="vehicle_comp_5_2" model="workshop.vehicle">
+            <field name="plate">8901KLM</field>
+            <field name="brand">Smart</field>
+            <field name="model">ForTwo</field>
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_category">car</field>
+            <field name="kms">41000</field>
+        </record>
+
+        <record id="vehicle_comp_5_3" model="workshop.vehicle">
+            <field name="plate">9012LMN</field>
+            <field name="brand">Harley-Davidson</field>
+            <field name="model">Street 750</field>
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">15000</field>
+        </record>
+
+        <record id="vehicle_comp_5_4" model="workshop.vehicle">
+            <field name="plate">0123MNO</field>
+            <field name="brand">Isuzu</field>
+            <field name="model">D-Max</field>
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_category">truck</field>
+            <field name="kms">72000</field>
+        </record>
+
+        <record id="vehicle_comp_5_5" model="workshop.vehicle">
+            <field name="plate">1234NOP</field>
+            <field name="brand">Aprilia</field>
+            <field name="model">SR 50</field>
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_category">motorcycle</field>
+            <field name="kms">8000</field>
+        </record>
+
+        <!-- Maintenances (2 per vehicle, 3+ products/services each) -->
+        <!-- Maintenance for vehicle_indiv_1_1 -->
+        <record id="maintenance_1_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_id" ref="vehicle_indiv_1_1" />
+            <field name="date_request">2024-01-15</field>
+            <field name="date_start">2024-01-16</field>
+            <field name="date_end">2024-01-17</field>
+            <field name="kms">44500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de aceite programado y revisión general</field>
+            <field name="diagnosis">Vehiculo en buen estado, solo cambio de aceite y filtros</field>
+        </record>
+
+        <!-- Maintenance lines for maintenance_1_1_1 -->
+        <record id="maintenance_line_1_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_1_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_1_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_1_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_1" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Second maintenance for vehicle_indiv_1_1 -->
+        <record id="maintenance_1_1_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_id" ref="vehicle_indiv_1_1" />
+            <field name="date_request">2024-06-10</field>
+            <field name="date_start">2024-06-11</field>
+            <field name="date_end">2024-06-12</field>
+            <field name="date_delivery">2024-06-12</field>
+            <field name="kms">48500</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">invoiced</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de pastillas de freno delanteras y revisión de
+                suspension</field>
+            <field name="diagnosis">Pastillas de freno desgastadas al 90%, suspension en buen estado</field>
+        </record>
+
+        <!-- Maintenance lines for maintenance_1_1_2 -->
+        <record id="maintenance_line_1_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_2" />
+            <field name="product_id" ref="product_brake_pads" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_1_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_2" />
+            <field name="product_id" ref="service_brake_pads_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <record id="maintenance_line_1_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_2" />
+            <field name="product_id" ref="service_suspension_review" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <record id="maintenance_line_1_2_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_2" />
+            <field name="product_id" ref="product_wipers" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_1_2_5" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_1_2" />
+            <field name="product_id" ref="service_wipers_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Maintenance for vehicle_indiv_1_2 -->
+        <record id="maintenance_1_2_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_id" ref="vehicle_indiv_1_2" />
+            <field name="date_request">2024-02-20</field>
+            <field name="date_start">2024-02-21</field>
+            <field name="date_end">2024-02-21</field>
+            <field name="kms">11500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Primer mantenimiento de moto</field>
+            <field name="diagnosis">Todo correcto, solo cambio de aceite y ajustes</field>
+        </record>
+
+        <record id="maintenance_line_2_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_2_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_2_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_2_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_2_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_2_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Second maintenance for vehicle_indiv_1_2 -->
+        <record id="maintenance_1_2_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_id" ref="vehicle_indiv_1_2" />
+            <field name="date_request">2024-07-05</field>
+            <field name="date_start">2024-07-06</field>
+            <field name="date_end">2024-07-07</field>
+            <field name="kms">13500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">ready</field>
+            <field name="priority">low</field>
+            <field name="problem_description">Cambio de bujías y revisión de cadena</field>
+            <field name="diagnosis">Bujías con desgaste normal, cadena bien tensionada</field>
+        </record>
+
+        <record id="maintenance_line_2_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_2_2" />
+            <field name="product_id" ref="product_spark_plugs" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_2_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_2_2" />
+            <field name="product_id" ref="service_spark_plug_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_2_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_2_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Maintenance for vehicle_indiv_1_3 -->
+        <record id="maintenance_1_3_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_id" ref="vehicle_indiv_1_3" />
+            <field name="date_request">2024-03-10</field>
+            <field name="date_start">2024-03-11</field>
+            <field name="date_end">2024-03-12</field>
+            <field name="kms">77000</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de correa de distribución</field>
+            <field name="diagnosis">Correa con desgaste importante, cambio preventivo</field>
+        </record>
+
+        <record id="maintenance_line_3_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_3_1" />
+            <field name="product_id" ref="product_timing_belt" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_3_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_3_1" />
+            <field name="product_id" ref="service_timing_belt_change" />
+            <field name="quantity">1</field>
+            <field name="duration">3.5</field>
+        </record>
+
+        <record id="maintenance_line_3_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_3_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_3_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_3_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <!-- Second maintenance for vehicle_indiv_1_3 -->
+        <record id="maintenance_1_3_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_1" />
+            <field name="vehicle_id" ref="vehicle_indiv_1_3" />
+            <field name="date_request">2024-08-22</field>
+            <field name="date_start">2024-08-23</field>
+            <field name="kms">79500</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">in_progress</field>
+            <field name="priority">high</field>
+            <field name="problem_description">Problema de frenos y aire acondicionado</field>
+            <field name="diagnosis">Discos de freno alabeados, aire acondicionado sin gas</field>
+        </record>
+
+        <record id="maintenance_line_3_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_3_2" />
+            <field name="product_id" ref="product_brake_disks" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_3_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_3_2" />
+            <field name="product_id" ref="service_brake_disks_change" />
+            <field name="quantity">1</field>
+            <field name="duration">3.0</field>
+        </record>
+
+        <record id="maintenance_line_3_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_1_3_2" />
+            <field name="product_id" ref="service_air_conditioning" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Maintenance for vehicle_indiv_2_1 -->
+        <record id="maintenance_2_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_2" />
+            <field name="vehicle_id" ref="vehicle_indiv_2_1" />
+            <field name="date_request">2024-01-20</field>
+            <field name="date_start">2024-01-21</field>
+            <field name="date_end">2024-01-22</field>
+            <field name="kms">31500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento periódico</field>
+            <field name="diagnosis">Cambio de aceite y filtros</field>
+        </record>
+
+        <record id="maintenance_line_4_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_1_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_4_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_1_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_4_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_1_1" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_4_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_1_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <!-- Second maintenance for vehicle_indiv_2_1 -->
+        <record id="maintenance_2_1_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_2" />
+            <field name="vehicle_id" ref="vehicle_indiv_2_1" />
+            <field name="date_request">2024-06-15</field>
+            <field name="date_start">2024-06-16</field>
+            <field name="kms">34000</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">quality_check</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Alineación y balanceo</field>
+            <field name="diagnosis">Desgaste irregular en neumáticos</field>
+        </record>
+
+        <record id="maintenance_line_4_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_1_2" />
+            <field name="product_id" ref="service_wheel_alignment" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_4_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_1_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Maintenance for vehicle_indiv_2_2 -->
+        <record id="maintenance_2_2_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_2" />
+            <field name="vehicle_id" ref="vehicle_indiv_2_2" />
+            <field name="date_request">2024-02-25</field>
+            <field name="date_start">2024-02-26</field>
+            <field name="date_end">2024-02-26</field>
+            <field name="kms">7500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">low</field>
+            <field name="problem_description">Primera revisión moto</field>
+        </record>
+
+        <record id="maintenance_line_5_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_2_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_5_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_2_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Maintenance for vehicle_indiv_2_3 -->
+        <record id="maintenance_2_3_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_2" />
+            <field name="vehicle_id" ref="vehicle_indiv_2_3" />
+            <field name="date_request">2024-03-05</field>
+            <field name="date_start">2024-03-06</field>
+            <field name="date_end">2024-03-07</field>
+            <field name="kms">55000</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de batería</field>
+        </record>
+
+        <record id="maintenance_line_6_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_3_1" />
+            <field name="product_id" ref="product_battery_60ah" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_6_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_2_3_1" />
+            <field name="product_id" ref="service_battery_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Maintenance for vehicle_indiv_3_1 -->
+        <record id="maintenance_3_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_3" />
+            <field name="vehicle_id" ref="vehicle_indiv_3_1" />
+            <field name="date_request">2024-01-30</field>
+            <field name="date_start">2024-01-31</field>
+            <field name="date_end">2024-02-01</field>
+            <field name="kms">22500</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">delivered</field>
+            <field name="priority">urgent</field>
+            <field name="problem_description">Problema de frenos urgente</field>
+        </record>
+
+        <record id="maintenance_line_7_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_3_1_1" />
+            <field name="product_id" ref="product_brake_pads" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_7_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_3_1_1" />
+            <field name="product_id" ref="service_brake_pads_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Maintenance for vehicle_indiv_4_1 -->
+        <record id="maintenance_4_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_4" />
+            <field name="vehicle_id" ref="vehicle_indiv_4_1" />
+            <field name="date_request">2024-02-10</field>
+            <field name="date_start">2024-02-11</field>
+            <field name="date_end">2024-02-12</field>
+            <field name="kms">40500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de neumáticos</field>
+        </record>
+
+        <record id="maintenance_line_8_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_4_1_1" />
+            <field name="product_id" ref="service_tire_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Maintenance for vehicle_indiv_5_1 -->
+        <record id="maintenance_5_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_individual_5" />
+            <field name="vehicle_id" ref="vehicle_indiv_5_1" />
+            <field name="date_request">2024-03-15</field>
+            <field name="date_start">2024-03-16</field>
+            <field name="date_end">2024-03-17</field>
+            <field name="kms">27500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Revisión completa</field>
+        </record>
+
+        <record id="maintenance_line_9_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_5_1_1" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <record id="maintenance_line_9_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_5_1_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_9_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_5_1_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <!-- Maintenance for vehicle_comp_1_1 (truck) -->
+        <record id="maintenance_comp_1_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_1" />
+            <field name="date_request">2024-01-10</field>
+            <field name="date_start">2024-01-11</field>
+            <field name="date_end">2024-01-12</field>
+            <field name="kms">124000</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">delivered</field>
+            <field name="priority">high</field>
+            <field name="problem_description">Mantenimiento pesado camión</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_1_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">3</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_1_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_1_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">3.0</field>
+        </record>
+
+        <!-- Maintenance for vehicle_comp_2_3 (motorcycle) -->
+        <record id="maintenance_comp_2_3_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_3" />
+            <field name="date_request">2024-02-15</field>
+            <field name="date_start">2024-02-16</field>
+            <field name="date_end">2024-02-16</field>
+            <field name="kms">31000</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento scooter reparto</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_3_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_3_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_3_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_3_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Maintenance for vehicle_comp_3_2 (other - excavator) -->
+        <record id="maintenance_comp_3_2_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_2" />
+            <field name="date_request">2024-03-20</field>
+            <field name="date_start">2024-03-21</field>
+            <field name="date_end">2024-03-22</field>
+            <field name="kms">55000</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">confirmed</field>
+            <field name="priority">urgent</field>
+            <field name="problem_description">Reparación maquinaria pesada</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_2_1" />
+            <field name="product_id" ref="product_brake_pads" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_2_1" />
+            <field name="product_id" ref="service_brake_pads_change" />
+            <field name="quantity">1</field>
+            <field name="duration">4.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_2_3 -->
+        <record id="maintenance_comp_2_3_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_3" />
+            <field name="date_request">2024-08-10</field>
+            <field name="date_start">2024-08-11</field>
+            <field name="kms">34000</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">in_progress</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de bujías y revisión eléctrica</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_3_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_3_2" />
+            <field name="product_id" ref="product_spark_plugs" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_3_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_3_2" />
+            <field name="product_id" ref="service_spark_plug_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_3_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_3_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_3_2 -->
+        <record id="maintenance_comp_3_2_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_2" />
+            <field name="date_request">2024-09-25</field>
+            <field name="date_start">2024-09-26</field>
+            <field name="kms">58000</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">draft</field>
+            <field name="priority">high</field>
+            <field name="problem_description">Cambio de aceite hidráulico</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_2_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_2_2" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">5</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_2_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_2_2" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">3.0</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_2_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_2_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_1_2 (primer mantenimiento pendiente) -->
+        <record id="maintenance_comp_1_2_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_2" />
+            <field name="date_request">2024-02-05</field>
+            <field name="date_start">2024-02-06</field>
+            <field name="date_end">2024-02-07</field>
+            <field name="kms">97000</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento furgoneta reparto</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_2_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_2_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_2_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_2_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_2_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_2_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_1_2 -->
+        <record id="maintenance_comp_1_2_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_2" />
+            <field name="date_request">2024-08-05</field>
+            <field name="date_start">2024-08-06</field>
+            <field name="kms">102000</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">quality_check</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de pastillas de freno</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_2_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_2_2" />
+            <field name="product_id" ref="product_brake_pads" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_2_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_2_2" />
+            <field name="product_id" ref="service_brake_pads_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_1_3 -->
+        <record id="maintenance_comp_1_3_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_3" />
+            <field name="date_request">2024-03-10</field>
+            <field name="date_start">2024-03-11</field>
+            <field name="date_end">2024-03-12</field>
+            <field name="kms">75500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento camioneta</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_3_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_3_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_3_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_3_1" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_3_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_3_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_3_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_3_1" />
+            <field name="product_id" ref="service_air_filter_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_1_3 -->
+        <record id="maintenance_comp_1_3_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_3" />
+            <field name="date_request">2024-09-15</field>
+            <field name="date_start">2024-09-16</field>
+            <field name="kms">79000</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">in_progress</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de correa distribución</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_3_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_3_2" />
+            <field name="product_id" ref="product_timing_belt" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_3_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_3_2" />
+            <field name="product_id" ref="service_timing_belt_change" />
+            <field name="quantity">1</field>
+            <field name="duration">3.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_1_4 -->
+        <record id="maintenance_comp_1_4_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_4" />
+            <field name="date_request">2024-04-05</field>
+            <field name="date_start">2024-04-06</field>
+            <field name="date_end">2024-04-06</field>
+            <field name="kms">24500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">low</field>
+            <field name="problem_description">Mantenimiento moto trail</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_4_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_4_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_4_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_4_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_1_4 -->
+        <record id="maintenance_comp_1_4_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_4" />
+            <field name="date_request">2024-10-10</field>
+            <field name="date_start">2024-10-11</field>
+            <field name="kms">27000</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">confirmed</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de neumáticos off-road</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_4_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_4_2" />
+            <field name="product_id" ref="service_tire_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_4_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_4_2" />
+            <field name="product_id" ref="service_wheel_alignment" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_1_5 -->
+        <record id="maintenance_comp_1_5_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_5" />
+            <field name="date_request">2024-05-10</field>
+            <field name="date_start">2024-05-11</field>
+            <field name="date_end">2024-05-12</field>
+            <field name="kms">64500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento furgoneta</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_5_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_5_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_5_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_5_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_5_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_5_1" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_5_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_5_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_1_5 -->
+        <record id="maintenance_comp_1_5_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_1" />
+            <field name="vehicle_id" ref="vehicle_comp_1_5" />
+            <field name="date_request">2024-11-05</field>
+            <field name="date_start">2024-11-06</field>
+            <field name="kms">68000</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">draft</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de batería y revisión eléctrica</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_5_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_5_2" />
+            <field name="product_id" ref="product_battery_60ah" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_5_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_5_2" />
+            <field name="product_id" ref="service_battery_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_1_5_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_1_5_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_2_1 -->
+        <record id="maintenance_comp_2_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_1" />
+            <field name="date_request">2024-03-15</field>
+            <field name="date_start">2024-03-16</field>
+            <field name="date_end">2024-03-17</field>
+            <field name="kms">141000</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">delivered</field>
+            <field name="priority">high</field>
+            <field name="problem_description">Mantenimiento camión Iveco</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_1_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_1_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">3</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_1_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_1_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_1_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_1_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">3.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_2_1 -->
+        <record id="maintenance_comp_2_1_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_1" />
+            <field name="date_request">2024-09-15</field>
+            <field name="date_start">2024-09-16</field>
+            <field name="kms">147000</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">in_progress</field>
+            <field name="priority">urgent</field>
+            <field name="problem_description">Reparación de frenos camión</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_1_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_1_2" />
+            <field name="product_id" ref="product_brake_pads" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_1_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_1_2" />
+            <field name="product_id" ref="product_brake_disks" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_1_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_1_2" />
+            <field name="product_id" ref="service_brake_pads_change" />
+            <field name="quantity">1</field>
+            <field name="duration">3.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_2_2 -->
+        <record id="maintenance_comp_2_2_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_2" />
+            <field name="date_request">2024-04-10</field>
+            <field name="date_start">2024-04-11</field>
+            <field name="date_end">2024-04-12</field>
+            <field name="kms">44000</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento vehículo tres ruedas</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_2_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_2_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_2_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_2_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_2_2 -->
+        <record id="maintenance_comp_2_2_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_2" />
+            <field name="date_request">2024-10-20</field>
+            <field name="date_start">2024-10-21</field>
+            <field name="kms">47000</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">ready</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de neumáticos y revisión</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_2_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_2_2" />
+            <field name="product_id" ref="service_tire_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_2_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_2_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_2_4 -->
+        <record id="maintenance_comp_2_4_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_4" />
+            <field name="date_request">2024-05-05</field>
+            <field name="date_start">2024-05-06</field>
+            <field name="date_end">2024-05-07</field>
+            <field name="kms">87500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento furgoneta Kangoo</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_4_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_4_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_4_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_4_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_4_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_4_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_2_4 -->
+        <record id="maintenance_comp_2_4_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_4" />
+            <field name="date_request">2024-11-10</field>
+            <field name="date_start">2024-11-11</field>
+            <field name="kms">90500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">confirmed</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de filtro de habitáculo</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_4_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_4_2" />
+            <field name="product_id" ref="product_cabin_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_4_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_4_2" />
+            <field name="product_id" ref="service_cabin_filter_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_2_5 -->
+        <record id="maintenance_comp_2_5_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_5" />
+            <field name="date_request">2024-06-01</field>
+            <field name="date_start">2024-06-02</field>
+            <field name="date_end">2024-06-03</field>
+            <field name="kms">70800</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento furgoneta Partner</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_5_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_5_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_5_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_5_1" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_5_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_5_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_5_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_5_1" />
+            <field name="product_id" ref="service_air_filter_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_2_5 -->
+        <record id="maintenance_comp_2_5_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_2" />
+            <field name="vehicle_id" ref="vehicle_comp_2_5" />
+            <field name="date_request">2024-12-05</field>
+            <field name="date_start">2024-12-06</field>
+            <field name="kms">73500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">draft</field>
+            <field name="priority">low</field>
+            <field name="problem_description">Cambio de escobillas</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_5_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_5_2" />
+            <field name="product_id" ref="product_wipers" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_2_5_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_2_5_2" />
+            <field name="product_id" ref="service_wipers_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_3_1 -->
+        <record id="maintenance_comp_3_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_1" />
+            <field name="date_request">2024-03-25</field>
+            <field name="date_start">2024-03-26</field>
+            <field name="date_end">2024-03-28</field>
+            <field name="kms">197000</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">delivered</field>
+            <field name="priority">urgent</field>
+            <field name="problem_description">Mantenimiento camión MAN</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_1_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_1_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">4</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_1_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_1_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_1_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_1_1" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_1_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_1_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">4.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_3_1 -->
+        <record id="maintenance_comp_3_1_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_1" />
+            <field name="date_request">2024-10-05</field>
+            <field name="date_start">2024-10-06</field>
+            <field name="kms">205000</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">in_progress</field>
+            <field name="priority">high</field>
+            <field name="problem_description">Cambio de discos de freno</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_1_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_1_2" />
+            <field name="product_id" ref="product_brake_disks" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_1_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_1_2" />
+            <field name="product_id" ref="service_brake_disks_change" />
+            <field name="quantity">1</field>
+            <field name="duration">5.0</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_3_3 -->
+        <record id="maintenance_comp_3_3_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_3" />
+            <field name="date_request">2024-04-15</field>
+            <field name="date_start">2024-04-16</field>
+            <field name="date_end">2024-04-16</field>
+            <field name="kms">17500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento moto KTM</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_3_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_3_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_3_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_3_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_3_3 -->
+        <record id="maintenance_comp_3_3_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_3" />
+            <field name="date_request">2024-11-20</field>
+            <field name="date_start">2024-11-21</field>
+            <field name="kms">19500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">quality_check</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Ajuste de válvulas y cadena</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_3_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_3_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_3_4 -->
+        <record id="maintenance_comp_3_4_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_4" />
+            <field name="date_request">2024-05-05</field>
+            <field name="date_start">2024-05-06</field>
+            <field name="date_end">2024-05-07</field>
+            <field name="kms">91500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento Land Cruiser</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_4_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_4_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_4_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_4_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_4_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_4_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_3_4 -->
+        <record id="maintenance_comp_3_4_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_4" />
+            <field name="date_request">2024-12-10</field>
+            <field name="date_start">2024-12-11</field>
+            <field name="kms">94500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">confirmed</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Revisión de suspensión 4x4</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_4_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_4_2" />
+            <field name="product_id" ref="service_suspension_review" />
+            <field name="quantity">1</field>
+            <field name="duration">2.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_4_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_4_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_3_5 -->
+        <record id="maintenance_comp_3_5_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_5" />
+            <field name="date_request">2024-06-10</field>
+            <field name="date_start">2024-06-11</field>
+            <field name="date_end">2024-06-12</field>
+            <field name="kms">66500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento pick-up</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_5_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_5_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_5_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_5_1" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_5_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_5_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_5_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_5_1" />
+            <field name="product_id" ref="service_air_filter_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_3_5 -->
+        <record id="maintenance_comp_3_5_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_3" />
+            <field name="vehicle_id" ref="vehicle_comp_3_5" />
+            <field name="date_request">2025-01-15</field>
+            <field name="date_start">2025-01-16</field>
+            <field name="kms">69500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">draft</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de bujías y revisión</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_5_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_5_2" />
+            <field name="product_id" ref="product_spark_plugs" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_3_5_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_3_5_2" />
+            <field name="product_id" ref="service_spark_plug_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_4_1 -->
+        <record id="maintenance_comp_4_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_1" />
+            <field name="date_request">2024-04-20</field>
+            <field name="date_start">2024-04-21</field>
+            <field name="date_end">2024-04-22</field>
+            <field name="kms">53500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento furgoneta Citroën</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_1_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_1_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_1_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_1_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_1_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_1_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_4_1 -->
+        <record id="maintenance_comp_4_1_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_1" />
+            <field name="date_request">2024-11-05</field>
+            <field name="date_start">2024-11-06</field>
+            <field name="kms">56500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">in_progress</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de filtro de habitáculo</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_1_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_1_2" />
+            <field name="product_id" ref="product_cabin_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_1_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_1_2" />
+            <field name="product_id" ref="service_cabin_filter_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_4_2 -->
+        <record id="maintenance_comp_4_2_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_2" />
+            <field name="date_request">2024-05-10</field>
+            <field name="date_start">2024-05-11</field>
+            <field name="date_end">2024-05-11</field>
+            <field name="kms">11500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">low</field>
+            <field name="problem_description">Mantenimiento scooter Vespa</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_2_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_2_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_2_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_2_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_4_2 -->
+        <record id="maintenance_comp_4_2_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_2" />
+            <field name="date_request">2024-12-15</field>
+            <field name="date_start">2024-12-16</field>
+            <field name="kms">13500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">ready</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Revisión de frenos y neumáticos</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_2_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_2_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_4_3 -->
+        <record id="maintenance_comp_4_3_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_3" />
+            <field name="date_request">2024-06-05</field>
+            <field name="date_start">2024-06-06</field>
+            <field name="date_end">2024-06-07</field>
+            <field name="kms">102500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento furgón Fiat</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_3_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_3_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_3_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_3_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_3_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_3_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_4_3 -->
+        <record id="maintenance_comp_4_3_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_3" />
+            <field name="date_request">2025-01-20</field>
+            <field name="date_start">2025-01-21</field>
+            <field name="kms">106000</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">confirmed</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de pastillas de freno</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_3_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_3_2" />
+            <field name="product_id" ref="product_brake_pads" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_3_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_3_2" />
+            <field name="product_id" ref="service_brake_pads_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_4_4 -->
+        <record id="maintenance_comp_4_4_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_4" />
+            <field name="date_request">2024-07-10</field>
+            <field name="date_start">2024-07-11</field>
+            <field name="date_end">2024-07-11</field>
+            <field name="kms">21500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento scooter Kymco</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_4_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_4_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_4_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_4_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_4_4 -->
+        <record id="maintenance_comp_4_4_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_4" />
+            <field name="date_request">2025-02-10</field>
+            <field name="date_start">2025-02-11</field>
+            <field name="kms">23500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">draft</field>
+            <field name="priority">low</field>
+            <field name="problem_description">Limpieza de carburador</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_4_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_4_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_4_5 -->
+        <record id="maintenance_comp_4_5_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_5" />
+            <field name="date_request">2024-08-05</field>
+            <field name="date_start">2024-08-06</field>
+            <field name="date_end">2024-08-07</field>
+            <field name="kms">37500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento SUV Volkswagen</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_5_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_5_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_5_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_5_1" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_5_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_5_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_5_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_5_1" />
+            <field name="product_id" ref="service_air_filter_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_4_5 -->
+        <record id="maintenance_comp_4_5_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_4" />
+            <field name="vehicle_id" ref="vehicle_comp_4_5" />
+            <field name="date_request">2025-03-15</field>
+            <field name="date_start">2025-03-16</field>
+            <field name="kms">40500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">confirmed</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Revisión de aire acondicionado</field>
+        </record>
+
+        <record id="maintenance_line_comp_4_5_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_4_5_2" />
+            <field name="product_id" ref="service_air_conditioning" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_5_1 -->
+        <record id="maintenance_comp_5_1_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_1" />
+            <field name="date_request">2024-06-20</field>
+            <field name="date_start">2024-06-21</field>
+            <field name="date_end">2024-06-22</field>
+            <field name="kms">88500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento furgón Renault</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_1_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_1_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">2</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_1_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_1_1" />
+            <field name="product_id" ref="product_oil_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_1_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_1_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_5_1 -->
+        <record id="maintenance_comp_5_1_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_1" />
+            <field name="date_request">2024-12-20</field>
+            <field name="date_start">2024-12-21</field>
+            <field name="kms">91500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">in_progress</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de batería y revisión</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_1_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_1_2" />
+            <field name="product_id" ref="product_battery_60ah" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_1_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_1_2" />
+            <field name="product_id" ref="service_battery_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_1_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_1_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_5_2 -->
+        <record id="maintenance_comp_5_2_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_2" />
+            <field name="date_request">2024-07-15</field>
+            <field name="date_start">2024-07-16</field>
+            <field name="date_end">2024-07-17</field>
+            <field name="kms">40500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento Smart ForTwo</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_2_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_2_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_2_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_2_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_5_2 -->
+        <record id="maintenance_comp_5_2_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_2" />
+            <field name="date_request">2025-01-25</field>
+            <field name="date_start">2025-01-26</field>
+            <field name="kms">43500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">quality_check</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Cambio de filtro de aire</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_2_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_2_2" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_2_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_2_2" />
+            <field name="product_id" ref="service_air_filter_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_5_3 -->
+        <record id="maintenance_comp_5_3_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_3" />
+            <field name="date_request">2024-08-10</field>
+            <field name="date_start">2024-08-11</field>
+            <field name="date_end">2024-08-11</field>
+            <field name="kms">14500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento Harley Davidson</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_3_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_3_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_3_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_3_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_5_3 -->
+        <record id="maintenance_comp_5_3_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_3" />
+            <field name="date_request">2025-02-28</field>
+            <field name="date_start">2025-03-01</field>
+            <field name="kms">16500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">ready</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Ajuste de carburación y escape</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_3_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_3_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_5_4 -->
+        <record id="maintenance_comp_5_4_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_4" />
+            <field name="date_request">2024-09-05</field>
+            <field name="date_start">2024-09-06</field>
+            <field name="date_end">2024-09-07</field>
+            <field name="kms">71500</field>
+            <field name="mechanic_id" ref="employee_mechanic_3" />
+            <field name="state">delivered</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Mantenimiento pick-up Isuzu</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_4_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_4_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_4_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_4_1" />
+            <field name="product_id" ref="product_air_filter" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_4_1_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_4_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_4_1_4" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_4_1" />
+            <field name="product_id" ref="service_air_filter_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_5_4 -->
+        <record id="maintenance_comp_5_4_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_4" />
+            <field name="date_request">2025-04-10</field>
+            <field name="date_start">2025-04-11</field>
+            <field name="kms">74500</field>
+            <field name="mechanic_id" ref="employee_mechanic_1" />
+            <field name="state">confirmed</field>
+            <field name="priority">normal</field>
+            <field name="problem_description">Revisión de suspensión 4x4</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_4_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_4_2" />
+            <field name="product_id" ref="service_suspension_review" />
+            <field name="quantity">1</field>
+            <field name="duration">2.0</field>
+        </record>
+
+        <!-- Vehicle: vehicle_comp_5_5 -->
+        <record id="maintenance_comp_5_5_1" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_5" />
+            <field name="date_request">2024-10-01</field>
+            <field name="date_start">2024-10-02</field>
+            <field name="date_end">2024-10-02</field>
+            <field name="kms">7500</field>
+            <field name="mechanic_id" ref="employee_mechanic_2" />
+            <field name="state">delivered</field>
+            <field name="priority">low</field>
+            <field name="problem_description">Mantenimiento scooter Aprilia</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_5_1_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_5_1" />
+            <field name="product_id" ref="product_oil_5w30" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_5_1_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_5_1" />
+            <field name="product_id" ref="service_oil_change" />
+            <field name="quantity">1</field>
+            <field name="duration">1.0</field>
+        </record>
+
+        <!-- Segundo mantenimiento para vehicle_comp_5_5 (MANTENIMIENTO 100) -->
+        <record id="maintenance_comp_5_5_2" model="workshop.maintenance">
+            <field name="customer_id" ref="customer_company_5" />
+            <field name="vehicle_id" ref="vehicle_comp_5_5" />
+            <field name="date_request">2025-05-05</field>
+            <field name="date_start">2025-05-06</field>
+            <field name="kms">8500</field>
+            <field name="mechanic_id" ref="employee_workshop_manager" />
+            <field name="state">draft</field>
+            <field name="priority">low</field>
+            <field name="problem_description">Revisión general y limpieza</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_5_2_1" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_5_2" />
+            <field name="product_id" ref="service_diagnostic" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_5_2_2" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_5_2" />
+            <field name="product_id" ref="product_wipers" />
+            <field name="quantity">1</field>
+        </record>
+
+        <record id="maintenance_line_comp_5_5_2_3" model="workshop.maintenance.line">
+            <field name="maintenance_id" ref="maintenance_comp_5_5_2" />
+            <field name="product_id" ref="service_wipers_change" />
+            <field name="quantity">1</field>
+            <field name="duration">0.5</field>
+        </record>
+    </data>
+</odoo>

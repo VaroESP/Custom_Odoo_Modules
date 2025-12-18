@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- QWeb Template for PDF -->
+    <template id="workshop_maintenance_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <!-- Header -->
+                        <div class="row mb-4">
+                            <div class="col-12 text-end">
+                                <div style="font-size: 20px; font-weight: bold; color: #2C3E50;">
+                                    INVOICE
+                                </div>
+                                <div style="font-size: 14px; margin-top: 10px;">
+                                    <strong>No:</strong>
+                                    <span t-esc="doc.name" />
+                                    <br />
+                                    <strong>Date:</strong>
+                                    <t t-if="doc.date_request">
+                                        <span t-esc="doc.date_request" />
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="today" />
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Separator line -->
+                        <hr style="border-top: 2px solid #2C3E50;" />
+
+                        <!-- Customer -->
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <div
+                                    style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">
+                                    CUSTOMER
+                                </div>
+                                <div style="font-size: 12px;">
+                                    <strong>
+                                        <span t-esc="doc.customer_id.name or ''" />
+                                    </strong>
+                                    <br />
+                                    <span t-esc="doc.customer_id.street or ''" />
+                                    <br />
+                                    <span t-if="doc.customer_id.city">
+                                        <span t-esc="doc.customer_id.city" />
+                                        <span t-if="doc.customer_id.zip"> (<span
+                                                t-esc="doc.customer_id.zip" />)</span>
+                                    </span>
+                                    <br />
+                                    <span t-if="doc.customer_id.vat"> VAT: <span
+                                            t-esc="doc.customer_id.vat" />
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Vehicle -->
+                            <div class="col-6 text-end">
+                                <div
+                                    style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">
+                                    VEHICLE
+                                </div>
+                                <div style="font-size: 12px;">
+                                    <strong>
+                                        <span t-esc="doc.vehicle_id.name or ''" />
+                                    </strong><br />
+                                    License Plate: <span t-esc="doc.vehicle_id.plate or ''" /><br />
+                                    <t
+                                        t-if="doc.kms">Kms: <span
+                                            t-esc="doc.kms" />
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Products/Services table -->
+                        <div class="row">
+                            <div class="col-12">
+                                <table
+                                    style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                                    <thead>
+                                        <tr
+                                            style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+                                            <th style="padding: 8px; text-align: left; width: 40%;">
+                                                DESCRIPTION</th>
+                                            <th
+                                                style="padding: 8px; text-align: center; width: 10%;">
+                                                QTY.</th>
+                                            <th
+                                                style="padding: 8px; text-align: center; width: 15%;">
+                                                PRICE</th>
+                                            <th
+                                                style="padding: 8px; text-align: center; width: 10%;">
+                                                HOURS</th>
+                                            <th style="padding: 8px; text-align: right; width: 25%;">
+                                                AMOUNT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="doc.line_ids" t-as="line">
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td style="padding: 8px;">
+                                                    <span
+                                                        t-esc="line.product_id.name or line.name or 'Product'" />
+                                                    <t t-if="line.product_type == 'service'">
+                                                        <br />
+                                                        <small style="color: #6c757d;">(Service)</small>
+                                                    </t>
+                                                </td>
+                                                <td style="padding: 8px; text-align: center;">
+                                                    <span t-esc="'{:.2f}'.format(line.quantity)" />
+                                                </td>
+                                                <td style="padding: 8px; text-align: center;">
+                                                    <span t-esc="'{:.2f}'.format(line.unit_price)" />
+                                                    € </td>
+                                                <td style="padding: 8px; text-align: center;">
+                                                    <t t-if="line.product_type == 'service'">
+                                                        <span t-esc="'{:.1f}'.format(line.duration)" />
+                                                    </t>
+                                                    <t t-else="">-</t>
+                                                </td>
+                                                <td style="padding: 8px; text-align: right;">
+                                                    <span
+                                                        t-esc="'{:.2f}'.format(line.price_subtotal)" />
+                                                    € </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Totals -->
+                        <div class="row mt-4">
+                            <div class="col-7"></div>
+                            <div class="col-5">
+                                <table style="width: 100%; font-size: 12px;">
+                                    <tr style="border-top: 2px solid #2C3E50;">
+                                        <td style="padding: 8px; text-align: right;">
+                                            <strong>TOTAL:</strong>
+                                        </td>
+                                        <td
+                                            style="padding: 8px; text-align: right; font-size: 16px; font-weight: bold;">
+                                            <span t-esc="'{:.2f}'.format(doc.total_amount)" /> € </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Observations -->
+                        <t t-if="doc.problem_description or doc.diagnosis">
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div
+                                        style="font-size: 12px; padding: 10px; background-color: #f8f9fa; border-radius: 5px;">
+                                        <strong>Observations:</strong>
+                                        <br />
+                                        <t t-if="doc.problem_description">
+                                            <span t-esc="doc.problem_description" />
+                                            <br />
+                                        </t>
+                                        <t t-if="doc.diagnosis">
+                                            <br />
+                                            <strong>Diagnosis:</strong>
+                                            <br />
+                                            <span t-esc="doc.diagnosis" />
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+
+                        <!-- Signatures -->
+                        <div class="row mt-5"
+                            style="position: absolute; bottom: 100px; width: 100%;">
+                            <div class="col-6 text-center">
+                                <div
+                                    style="border-top: 1px solid #000; width: 80%; margin: 0 auto; padding-top: 5px;">
+                                    Customer Signature
+                                </div>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div
+                                    style="border-top: 1px solid #000; width: 80%; margin: 0 auto; padding-top: 5px;">
+                                    Workshop Signature
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="row mt-5"
+                            style="position: absolute; bottom: 30px; width: 100%; font-size: 10px; color: #6c757d;">
+                            <div class="col-12 text-center"> Example Mechanical Workshop - VAT:
+                                B87654321 - Tel: 912 345 678<br /> This document is valid as a
+                                simplified invoice according to Law 7/2012 </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <!-- Report Definition (ir.actions.report) -->
+    <record id="action_report_workshop_maintenance" model="ir.actions.report">
+        <field name="name">Maintenance Report</field>
+        <field name="model">workshop.maintenance</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">workshop.workshop_maintenance_report_template</field>
+        <field name="print_report_name">'Invoice - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_workshop_maintenance" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

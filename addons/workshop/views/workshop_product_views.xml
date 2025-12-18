@@ -1,0 +1,49 @@
+<odoo>
+    <!-- List view -->
+    <record id="workshop_product_list" model="ir.ui.view">
+        <field name="name">workshop.product.list</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="default_order">name asc</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="workshop_product_form" model="ir.ui.view">
+        <field name="name">workshop.product.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='id']" position="before">
+                <field name="is_workshop_product" invisible="1" />
+            </xpath>
+
+            <xpath expr="//page[@name='general_information']" position="after">
+                <group string="Configuración del Taller"
+                    invisible="('is_workshop_product', '=', False)">
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Action to open product views -->
+    <record id="action_product" model="ir.actions.act_window">
+        <field name="name">Workshop Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_workshop_product', '=', True)]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No workshop products found.
+            </p>
+            <p>
+                Products used in workshop maintenance operations.
+                Establishes minimum and maximum stock levels for inventory control.
+            </p>
+        </field>
+    </record>
+</odoo>

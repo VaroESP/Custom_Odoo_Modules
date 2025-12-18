@@ -1,0 +1,1211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* workshop
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20251106\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-10 18:23+0000\n"
+"PO-Revision-Date: 2025-12-10 18:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: workshop
+#: model:ir.actions.report,print_report_name:workshop.action_report_workshop_maintenance
+msgid "'Invoice - %s' % (object.name)"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "<b>TOTAL:</b>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid ""
+"<br/>\n"
+"                                                        <small style=\"color: #6c757d;\">(Service)</small>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid ""
+"<br/>\n"
+"                                            <strong>Diagnosis:</strong>\n"
+"                                            <br/>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid ""
+"<br/>\n"
+"                                    <strong>Date:</strong>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid ""
+"<br/>\n"
+"                                    License Plate:"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_customer_kanban
+msgid "<i class=\"fa fa-wrench\"/> Workshop"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_employee_kanban
+msgid "<i class=\"fa fa-wrench\"/><span> Workshop </span>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "<span class=\"o_stat_text\">Invoiced</span>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_customer_form
+msgid "<span class=\"o_stat_text\">Mantenimientos</span>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_customer_form
+msgid "<span class=\"o_stat_text\">Vehículos</span>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "<strong>No:</strong>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid ""
+"<strong>Observations:</strong>\n"
+"                                        <br/>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "<strong>TOTAL:</strong>"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "AMOUNT"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_oil_5w30_product_template
+msgid "Aceite Motor 5W30 Sintético 5L"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__hr_employee__employee_type__administrative
+msgid "Administrative"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_wheel_alignment_product_template
+msgid "Alineación y Balanceo"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__hr_employee__employee_type__apprentice
+msgid "Apprentice"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__is_available
+msgid "Available"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__avatar_128
+#: model:ir.model.fields,field_description:workshop.field_res_partner__avatar_128
+#: model:ir.model.fields,field_description:workshop.field_res_users__avatar_128
+msgid "Avatar 128"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_battery_60ah_product_template
+msgid "Batería 60Ah 540A"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__brand
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Brand"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "CUSTOMER"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_timing_belt_change_product_template
+msgid "Cambio Correa de Distribución"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_brake_disks_change_product_template
+msgid "Cambio Discos de Freno (Delanteros)"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_wipers_change_product_template
+msgid "Cambio Escobillas Limpiaparabrisas"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_air_filter_change_product_template
+msgid "Cambio Filtro de Aire"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_cabin_filter_change_product_template
+msgid "Cambio Filtro de Habitáculo"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_brake_pads_change_product_template
+msgid "Cambio Pastillas de Freno (Delanteras)"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_oil_change_product_template
+msgid "Cambio de Aceite y Filtro"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_battery_change_product_template
+msgid "Cambio de Batería"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_spark_plug_change_product_template
+msgid "Cambio de Bujías"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_clutch_change_product_template
+msgid "Cambio de Embrague"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_tire_change_product_template
+msgid "Cambio de Neumáticos (4 unidades)"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Cancel"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_vehicle__vehicle_category__car
+msgid "Car"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_hr_employee__employee_type
+msgid ""
+"Categorize your Employees by type. This field also has an impact on "
+"contracts. Only Employees, Students and Trainee will have contract history."
+msgstr ""
+"Categorice sus empleados por tipo. Este campo también afectará a sus "
+"contactos, solo los Empleados, Estudiantes y Aprendices tendrán historial de"
+" contracto."
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__city
+#: model:ir.model.fields,field_description:workshop.field_res_partner__city
+#: model:ir.model.fields,field_description:workshop.field_res_users__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__res_partner__customer_type__company
+msgid "Company"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Complete"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_product_form
+msgid "Configuración del Taller"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Confirm"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__state__confirmed
+msgid "Confirmed"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__country_id
+#: model:ir.model.fields,field_description:workshop.field_res_partner__country_id
+#: model:ir.model.fields,field_description:workshop.field_res_users__country_id
+msgid "Country"
+msgstr "Nacionalidad (País)"
+
+#. module: workshop
+#: model_terms:ir.actions.act_window,help:workshop.action_maintenance
+msgid ""
+"Create maintenance orders for vehicles that need service or repair.\n"
+"                Track the progress from draft to invoiced."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__create_uid
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__create_uid
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__create_date
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__create_date
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__customer_id
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__customer_id
+msgid "Customer"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "Customer Signature"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_res_partner__customer_type
+#: model:ir.model.fields,field_description:workshop.field_res_users__customer_type
+msgid "Customer Type"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model,name:workshop.model_res_partner
+msgid "Customer model"
+msgstr "Contacto"
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__customer_notes
+msgid "Customer notes"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_res_partner__maintenance_ids
+#: model:ir.model.fields,field_description:workshop.field_res_users__maintenance_ids
+msgid "Customer's Maintenances"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_res_partner__vehicle_ids
+#: model:ir.model.fields,field_description:workshop.field_res_users__vehicle_ids
+msgid "Customer's Vehicles"
+msgstr ""
+
+#. module: workshop
+#: model:ir.ui.menu,name:workshop.customers
+#: model:ir.ui.menu,name:workshop.menu_customers
+msgid "Customers"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "DESCRIPTION"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__date_start
+msgid "Date Start"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__date_delivery
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_list
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Date delivery"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__date_end
+msgid "Date end"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__date_request
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_list
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Date request"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__state__delivered
+msgid "Delivered"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Delivery"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__name
+msgid "Description"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__diagnosis
+msgid "Diagnosis"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_diagnostic_product_template
+msgid "Diagnóstico Computarizado"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_brake_disks_product_template
+msgid "Discos de Freno Delanteros (Par)"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__display_name
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__display_name
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__duration
+msgid "Duration"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__employee_type
+msgid "Employee Type"
+msgstr "Tipo de empleado"
+
+#. module: workshop
+#: model:ir.model,name:workshop.model_hr_employee
+msgid "Employee model"
+msgstr "Empleado"
+
+#. module: workshop
+#: model:ir.ui.menu,name:workshop.employees
+#: model:ir.ui.menu,name:workshop.menu_employees
+msgid "Employees"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid ""
+"Example Mechanical Workshop - VAT:\n"
+"                                B87654321 - Tel: 912 345 678<br/> This document is valid as a\n"
+"                                simplified invoice according to Law 7/2012"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_oil_filter_product_template
+msgid "Filtro de Aceite Universal"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_air_filter_product_template
+msgid "Filtro de Aire"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_cabin_filter_product_template
+msgid "Filtro de Habitáculo Carbón Activado"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance_line__duration
+msgid "For services, duration in hours"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance_line__product_type
+msgid ""
+"Goods are tangible materials and merchandise you provide.\n"
+"A service is a non-material product you provide."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "HOURS"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__priority__high
+msgid "High"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__id
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__id
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__id
+msgid "ID"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "INVOICE"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__message_has_error
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__state__in_progress
+msgid "In progress"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__res_partner__customer_type__individual
+msgid "Individual"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__internal_notes
+msgid "Internal notes"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Internal notes for workshop staff..."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__invoice_id
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Invoice"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__invoiced_amount
+msgid "Invoice amount"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__state__invoiced
+msgid "Invoiced"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_spark_plugs_product_template
+msgid "Juego Bujías Iridium (4 unidades)"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_wipers_product_template
+msgid "Juego Escobillas Limpiaparabrisas"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__kms
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__kms
+msgid "Kilometers"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_timing_belt_product_template
+msgid "Kit Correa de Distribución"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Kms"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "Kms:"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__write_uid
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__write_uid
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__write_date
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__write_date
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__last_maintenance
+msgid "Last maintenance"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__priority__low
+msgid "Low"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__maintenance_id
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Maintenance"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model,name:workshop.model_workshop_maintenance_line
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Maintenance Lines"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Maintenance Number"
+msgstr ""
+
+#. module: workshop
+#: model:ir.actions.report,name:workshop.action_report_workshop_maintenance
+msgid "Maintenance Report"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__line_ids
+msgid "Maintenance lines"
+msgstr ""
+
+#. module: workshop
+#: model:ir.actions.act_window,name:workshop.action_maintenance
+#: model:ir.model.fields,field_description:workshop.field_product_product__maintenance_ids
+#: model:ir.model.fields,field_description:workshop.field_product_template__maintenance_ids
+#: model:ir.model.fields,field_description:workshop.field_res_partner__maintenance_count
+#: model:ir.model.fields,field_description:workshop.field_res_users__maintenance_count
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__maintenance_count
+#: model:ir.ui.menu,name:workshop.maintenances
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_list
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Maintenances"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_employee_form
+msgid "Mantenimientos"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__mechanic_id
+#: model:ir.model.fields.selection,name:workshop.selection__hr_employee__employee_type__mechanic
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_list
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Mechanic"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__maintenance_ids
+msgid "Mechanic's Maintenances"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Mechanic's diagnosis..."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__model
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Model"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_vehicle__vehicle_category__motorcycle
+msgid "Motorcycle"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__name
+msgid "Name"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__next_maintenance
+msgid "Next maintenance"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.actions.act_window,help:workshop.action_maintenance
+msgid "No maintenance orders found."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.actions.act_window,help:workshop.action_product
+msgid "No workshop products found."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__priority__normal
+msgid "Normal"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__notes
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Notes"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Notes to share with customer..."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_vehicle__vehicle_category__other
+msgid "Other"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "PRICE"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.product_brake_pads_product_template
+msgid "Pastillas de Freno Delanteras"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__plate
+msgid "Plate"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__postal_code
+#: model:ir.model.fields,field_description:workshop.field_res_partner__postal_code
+#: model:ir.model.fields,field_description:workshop.field_res_users__postal_code
+msgid "Postal Code"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Print PDF"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__priority
+msgid "Priority"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Problem & Diagnosis"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__problem_description
+msgid "Problems description"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__product_id
+msgid "Product"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model,name:workshop.model_product_template
+msgid "Product model"
+msgstr "Producto"
+
+#. module: workshop
+#: model:ir.ui.menu,name:workshop.menu_products
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Products"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__product_ids
+msgid "Products Used"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.actions.act_window,help:workshop.action_product
+msgid ""
+"Products used in workshop maintenance operations.\n"
+"                Establishes minimum and maximum stock levels for inventory control."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "QTY."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Quality Approve"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__state__quality_check
+msgid "Quality Check"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__quantity
+msgid "Quantity"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__state__ready
+msgid "Ready for delivery"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_air_conditioning_product_template
+msgid "Revisión Aire Acondicionado"
+msgstr ""
+
+#. module: workshop
+#: model:product.template,name:workshop.service_suspension_review_product_template
+msgid "Revisión de Suspensión"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "Start"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__state_id
+#: model:ir.model.fields,field_description:workshop.field_res_partner__state_id
+#: model:ir.model.fields,field_description:workshop.field_res_users__state_id
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__state
+msgid "State"
+msgstr "Provincia"
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__street
+#: model:ir.model.fields,field_description:workshop.field_res_partner__street
+#: model:ir.model.fields,field_description:workshop.field_res_users__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__price_subtotal
+msgid "Subtotal"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_res_partner__vat
+#: model:ir.model.fields,help:workshop.field_res_users__vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr ""
+"El número de identificación fiscal. Los valores establecidos aquí se "
+"validarán según el formato del país. Puede utilizar \"/\" para indicar que "
+"el contacto no está sujeto a impuestos."
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_res_partner__user_id
+#: model:ir.model.fields,help:workshop.field_res_users__user_id
+msgid "The internal user in charge of this contact."
+msgstr "El usuario interno a cargo de este contacto."
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_form
+msgid "The problem reported by the customer..."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.actions.act_window,help:workshop.action_customer
+msgid ""
+"The workshop's clients are contacts who have vehicles registered for maintenance and\n"
+"                repair."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.actions.act_window,help:workshop.action_employee
+msgid ""
+"The workshop's employees include mechanics, apprentices, administrative staff and\n"
+"                workshop managers."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.actions.act_window,help:workshop.action_customer
+msgid "There are no registered workshop customers."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.actions.act_window,help:workshop.action_employee
+msgid "There are no registered workshop employees."
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_maintenance_list
+msgid "Total"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__total_amount
+msgid "Total amount"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__total_hours
+msgid "Total hours"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__total_parts
+msgid "Total spare parts"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_vehicle__vehicle_category__truck
+msgid "Truck"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__product_type
+msgid "Type"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance_line__unit_price
+msgid "Unit Price"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__workshop_maintenance__priority__urgent
+msgid "Urgent"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__user_id
+#: model:ir.model.fields,field_description:workshop.field_res_partner__user_id
+#: model:ir.model.fields,field_description:workshop.field_res_users__user_id
+msgid "User ID"
+msgstr "Usuario"
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_res_partner__vat
+#: model:ir.model.fields,field_description:workshop.field_res_users__vat
+msgid "VAT"
+msgstr "NIF"
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "VAT:"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "VEHICLE"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__vehicle_id
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__name
+msgid "Vehicle"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Vehicle Type"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model,name:workshop.model_workshop_vehicle
+msgid "Vehicle model"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__vehicle_category
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_form
+msgid "Vehicle type"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__maintenance_ids
+msgid "Vehicle's maintenances"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_employee_form
+msgid "Vehicle:"
+msgstr ""
+
+#. module: workshop
+#: model:ir.actions.act_window,name:workshop.action_vehicle
+#: model:ir.model.fields,field_description:workshop.field_res_partner__vehicle_count
+#: model:ir.model.fields,field_description:workshop.field_res_users__vehicle_count
+#: model:ir.ui.menu,name:workshop.menu_vehicles
+#: model:ir.ui.menu,name:workshop.vehicles
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_customer_form
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_vehicle_list
+msgid "Vehicles"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_maintenance__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,help:workshop.field_workshop_maintenance__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: workshop
+#: model:ir.ui.menu,name:workshop.menu_workshop_main
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_employee_form
+msgid "Workshop"
+msgstr ""
+
+#. module: workshop
+#: model:ir.actions.act_window,name:workshop.action_customer
+msgid "Workshop Customers"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model,name:workshop.model_workshop_maintenance
+msgid "Workshop Maintenance"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model,name:workshop.model_report_workshop_workshop_maintenance_report
+msgid "Workshop Maintenance Report"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields.selection,name:workshop.selection__hr_employee__employee_type__workshop_manager
+msgid "Workshop Manager"
+msgstr ""
+
+#. module: workshop
+#: model:ir.actions.act_window,name:workshop.action_product
+msgid "Workshop Products"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.workshop_maintenance_report_template
+msgid "Workshop Signature"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_res_partner__is_workshop_customer
+#: model:ir.model.fields,field_description:workshop.field_res_users__is_workshop_customer
+msgid "Workshop customer"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_hr_employee__is_workshop_employee
+msgid "Workshop employee"
+msgstr ""
+
+#. module: workshop
+#: model:ir.actions.act_window,name:workshop.action_employee
+msgid "Workshop employees"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_product_product__is_workshop_product
+#: model:ir.model.fields,field_description:workshop.field_product_template__is_workshop_product
+msgid "Workshop product"
+msgstr ""
+
+#. module: workshop
+#: model:ir.model.fields,field_description:workshop.field_workshop_vehicle__avatar_128
+msgid "avatar 128"
+msgstr ""
+
+#. module: workshop
+#: model_terms:ir.ui.view,arch_db:workshop.view_workshop_customer_form
+msgid "Último:"
+msgstr ""

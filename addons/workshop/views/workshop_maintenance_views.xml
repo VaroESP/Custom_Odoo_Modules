@@ -1,0 +1,256 @@
+<odoo>
+    <!-- List view -->
+    <record id="view_workshop_maintenance_list" model="ir.ui.view">
+        <field name="name">workshop.maintenance.list</field>
+        <field name="model">workshop.maintenance</field>
+        <field name="arch" type="xml">
+            <list string="Maintenances">
+                <field name="name" />
+                <field name="vehicle_id" />
+                <field name="customer_id" />
+                <field name="date_request" string="Date request" />
+                <field name="date_delivery" string="Date delivery" />
+                <field name="state" widget="badge"
+                    decoration-success="state in ['delivered', 'invoiced']"
+                    decoration-warning="state in ['confirmed', 'in_progress', 'quality_check', 'ready']"
+                    decoration-danger="state == 'cancelled'" />
+                <field name="priority" widget="priority" />
+                <field name="mechanic_id" string="Mechanic" />
+                <field name="total_amount" string="Total" />
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban view -->
+    <record id="view_workshop_maintenance_kanban" model="ir.ui.view">
+        <field name="name">workshop.maintenance.kanban</field>
+        <field name="model">workshop.maintenance</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" group_expand="true">
+                <field name="name" />
+                <field name="vehicle_id" />
+                <field name="customer_id" />
+                <field name="state" />
+                <field name="priority" />
+                <field name="date_request" />
+                <field name="mechanic_id" />
+                <field name="total_amount" />
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb16">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name" />
+                                    </strong>
+                                    <div class="text-muted">
+                                        <field name="vehicle_id" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <field name="priority" widget="priority" />
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div>
+                                    <field name="customer_id" widget="many2one_avatar" />
+                                </div>
+                                <div>
+                                    <field name="state" widget="badge" />
+                                </div>
+                                <div class="text-end">
+                                    <field name="total_amount" widget="monetary" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="view_workshop_maintenance_form" model="ir.ui.view">
+        <field name="name">workshop.maintenance.form</field>
+        <field name="model">workshop.maintenance</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object" class="btn-primary" />
+                    <button name="action_start" string="Start" type="object" class="btn-primary" />
+                    <button name="action_complete" string="Complete" type="object"
+                        class="btn-primary" />
+                    <button name="action_quality_approve" string="Quality Approve" type="object"
+                        class="btn-primary" />
+                    <button name="action_delivery" string="Delivery" type="object"
+                        class="btn-primary" />
+                    <button name="action_print_invoice"
+                        string="Print PDF"
+                        type="object"
+                        class="btn-secondary" />
+                    <button name="action_cancel" string="Cancel" type="object" class="btn-secondary" />
+                    <field name="state" widget="statusbar"
+                        statusbar_visible="draft,confirmed,in_progress,quality_check,ready,delivered,invoiced,cancelled" />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_create_invoice" type="object" class="oe_stat_button"
+                            icon="fa-money" invisible="('state', '!=', 'delivered')">
+                            <div class="o_stat_info">
+                                <field name="invoiced_amount" widget="monetary" nolabel="1" />
+                                <span class="o_stat_text">Invoiced</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" default="New" placeholder="Maintenance Number" />
+                        </h1>
+                        <div class="o_row">
+                            <field name="priority" widget="priority" />
+                        </div>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="customer_id" />
+                            <field name="vehicle_id" />
+                            <field name="mechanic_id"
+                                domain="[('is_workshop_employee', '=', True), ('employee_type', 'in', ['mechanic', 'workshop_manager'])]" />
+                        </group>
+                        <group>
+                            <field name="date_request" />
+                            <field name="date_start" />
+                            <field name="date_end" />
+                            <field name="date_delivery" />
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                        </group>
+                        <group>
+                            <field name="total_hours" widget="monetary" />
+                            <field name="total_amount" widget="monetary" />
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Problem &amp; Diagnosis">
+                            <group>
+                                <group>
+                                    <field name="problem_description"
+                                        placeholder="The problem reported by the customer..." />
+                                </group>
+                                <group>
+                                    <field name="diagnosis"
+                                        placeholder="Mechanic's diagnosis..." />
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Products">
+                            <field name="line_ids">
+                                <list editable="bottom" string="Maintenance Lines">
+                                    <field name="product_id"
+                                        domain="[('is_workshop_product', '=', True)]" />
+                                    <field name="quantity" />
+                                    <field name="unit_price" />
+                                    <field name="duration" />
+                                    <field name="price_subtotal" widget="monetary" />
+                                    <field name="product_type" invisible="1" />
+                                </list>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="product_id"
+                                                domain="[('is_workshop_product', '=', True)]" />
+                                            <field name="quantity" />
+                                            <field name="unit_price" />
+                                            <field name="duration"
+                                                invisible="('product_type', '!=', 'service')" />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                            <div class="oe_subtotal_footer">
+                                <table class="oe_subtotal_footer_separator" width="100%">
+                                    <tbody>
+                                        <tr class="oe_subtotal_footer_separator">
+                                            <td width="50%"></td>
+                                            <td class="text-end" width="25%">
+                                                <b>TOTAL:</b>
+                                            </td>
+                                            <td class="text-end" width="25%">
+                                                <strong>
+                                                    <field name="total_amount"
+                                                        widget="monetary"
+                                                        readonly="1"
+                                                        nolabel="1"
+                                                        class="oe_subtotal_footer_separator" />
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </page>
+
+                        <page string="Notes">
+                            <group>
+                                <group>
+                                    <field name="internal_notes"
+                                        placeholder="Internal notes for workshop staff..." />
+                                </group>
+                                <group>
+                                    <field name="customer_notes"
+                                        placeholder="Notes to share with customer..." />
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Invoice" invisible="not invoice_id">
+                            <field name="invoice_id" mode="form" nolabel="1">
+                                <form>
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="name" />
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="invoice_date" />
+                                                <field name="invoice_date_due" />
+                                            </group>
+                                            <group>
+                                                <field name="amount_total" widget="monetary" />
+                                                <field name="state" widget="badge" />
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action views -->
+    <record id="action_maintenance" model="ir.actions.act_window">
+        <field name="name">Maintenances</field>
+        <field name="res_model">workshop.maintenance</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No maintenance orders found.
+            </p>
+            <p>
+                Create maintenance orders for vehicles that need service or repair.
+                Track the progress from draft to invoiced.
+            </p>
+        </field>
+    </record>
+</odoo>

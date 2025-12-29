@@ -1,0 +1,9 @@
+{
+"name": "Producto via API",
+"type": "product",
+"description_sale": "Esta es una descripción del producto",
+"list_price": 23.00,
+"standard_price": 10.00,
+"default_code": "PRODUCTO_UNO",
+"token": "asdfghjklqwertyuiop"
+}

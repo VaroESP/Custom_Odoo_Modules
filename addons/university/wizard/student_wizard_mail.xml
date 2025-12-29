@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="university_student_send_wizard_form" model="ir.ui.view">
+        <field name="name">university.student.send.wizard.form</field>
+        <field name="model">mail.compose.message</field>
+        <field name="arch" type="xml">
+            <form>
+                <!-- Recipient and subject -->
+                <group>
+                    <field name="partner_ids"
+                        string="Recipients"
+                        widget="many2many_tags"
+                        options="{'no_create': True, 'no_open': True, 'no_edit': True}"
+                        required="1" />
+                </group>
+                <group>
+                    <field name="subject"
+                        string="Subject"
+                        required="1" />
+                </group>
+
+                <!-- Email body -->
+                <label for="body" string="Message" />
+                <field name="body"
+                    class="oe-bordered-editor"
+                    widget="html_mail" />
+                    
+                <!-- Attachments -->
+                <group>
+                    <field name="attachment_ids"
+                        widget="many2many_binary"
+                        filename="name"
+                        string="Attachments"
+                        nolabel="1" />
+                </group>
+
+                <!-- Template selection -->
+                <group>
+                    <group>
+                        <field name="template_id"
+                            widget="mail_template"
+                            string="Load Template"
+                            options="{'no_create': True, 'no_edit': True}"
+                            context="{'default_model': 'university.student'}" />
+                    </group>
+                </group>
+
+                <!-- Footer buttons -->
+                <footer>
+                    <button string="Send Email"
+                        name="action_send_mail"
+                        type="object"
+                        class="btn-primary" />
+                    <button string="Discard"
+                        special="cancel"
+                        class="btn-secondary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

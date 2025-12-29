@@ -1,0 +1,166 @@
+<odoo>
+    <data>
+        <!-- Kanban view -->
+        <record id="view_university_kanban" model="ir.ui.view">
+            <field name="name">university.university.kanban</field>
+            <field name="model">university.university</field>
+            <field eval="1" name="priority" />
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name" />
+                    <field name="director_id" />
+                    <field name="avatar_128" />
+                    <templates>
+                        <t t-name="card">
+                            <div class="d-flex">
+                                <div class="me-2">
+                                    <field name="avatar_128" widget="image"
+                                        options="{'size': [100, 100]}" />
+                                </div>
+                                <div class="p-2">
+                                    <div>
+                                        <strong>
+                                            <field name="name" />
+                                        </strong>
+                                    </div>
+                                    <div class="mt-2">
+                                        <span>
+                                            <strong>Director: </strong><field name="director_id" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_university_form" model="ir.ui.view">
+            <field name="name">university.university.form</field>
+            <field name="model">university.university</field>
+            <field name="arch" type="xml">
+                <form string="University">
+                    <sheet>
+                        <field name="avatar_128" widget="image" class="oe_avatar" />
+                        <div name="button_box">
+                            <button name="action_view_tuitions"
+                                type="object"
+                                invisible="tuition_count == 0"
+                                icon="fa-id-card">
+                                <field name="tuition_count" widget="statinfo" />
+                            </button>
+                            <button name="action_view_students"
+                                type="object"
+                                invisible="student_count == 0"
+                                icon="fa-graduation-cap">
+                                <field name="student_count" widget="statinfo" />
+                            </button>
+                            <button name="action_view_teachers"
+                                type="object"
+                                invisible="teacher_count == 0"
+                                icon="fa-user">
+                                <field name="teacher_count" widget="statinfo" />
+                            </button>
+                            <button name="action_view_departments"
+                                type="object"
+                                invisible="department_count == 0"
+                                icon="fa-building">
+                                <field name="department_count" widget="statinfo" />
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="e.g. Oxford University" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="director_id" invisible="not id"
+                                    domain="[('university_id', '=', id)]" />
+                                <field name="create_date" invisible="not id" />
+                            </group>
+                        </group>
+                        <notebook colspan="4" invisible="not id">
+                            <page string="Departments" name="departments" autofocus="autofocus">
+                                <field name="department_ids" mode="kanban">
+                                    <kanban>
+                                        <field name="name" />
+                                        <field name="manager_id" />
+                                        <templates>
+                                            <t t-name="card" class="flex-row">
+                                                <main class="p-2">
+                                                    <span>
+                                                        <strong>
+                                                            <field name="name" />
+                                                        </strong>
+                                                    </span>
+                                                    <t t-if="record.is_manager == True">
+                                                        <span>
+                                                            <strong>Manager: </strong>
+                                                            <field name="manager_id" />
+                                                        </span>
+                                                    </t>
+                                                </main>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Address inherit to view_university_form -->
+        <record id="view_university_address_form" model="ir.ui.view">
+            <field name="name">university.university.address.form</field>
+            <field name="model">university.university</field>
+            <field name="inherit_id" ref="view_university_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet//group//group" position="before">
+                    <group>
+                        <label for="street" string="Address" />
+                        <div>
+                            <field name="street" placeholder="Street" />
+                            <div class="col-6 o_row">
+                                <field name="city" placeholder="City" />
+                                <field name="state_id" placeholder="State"
+                                    options="{'no_open': True, 'no_quick_create': True}"
+                                    context="{'default_country_id': country_id}" />
+                            </div>
+                            <div class="col-6 o_row">
+                                <field name="zip" placeholder="Postal Code" />
+                                <field name="country_id" placeholder="Country"
+                                    class="o_address_country"
+                                    options='{"no_open": True, "no_create": True}' />
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- List view -->
+        <record id="view_university_list" model="ir.ui.view">
+            <field name="name">university.university.list</field>
+            <field name="model">university.university</field>
+            <field name="arch" type="xml">
+                <list string="Universities" sample="1" multi_edit="1">
+                    <field name="name" string="Name" />
+                    <field name="director_id" />
+                </list>
+            </field>
+        </record>
+
+        <!-- Action to open university default views -->
+        <record id="action_university_default_views" model="ir.actions.act_window">
+            <field name="name">Universities</field>
+            <field name="res_model">university.university</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="view_id" ref="view_university_list" />
+        </record>
+    </data>
+</odoo>

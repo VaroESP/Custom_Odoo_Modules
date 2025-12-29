@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!-- Pivot view -->
+        <record id="view_report_student" model="ir.ui.view">
+            <field name="name">university.report.student</field>
+            <field name="model">university.report.student</field>
+            <field name="arch" type="xml">
+                <pivot string="Students" sample="1">
+                    <field name="student_id" type="row" />
+                    <field name="tuition_id" />
+                    <field name="subject_id" />
+                    <field name="grade" type="measure" />
+                    <field name="university_id" type="col" />
+                    <field name="teacher_id" />
+                    <field name="department_id" />
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Graph view -->
+        <record id="view_report_student_graph" model="ir.ui.view">
+            <field name="name">university.student.graph</field>
+            <field name="model">university.report.student</field>
+            <field name="arch" type="xml">
+                <graph string="Students" sample="1">
+                    <field name="student_id" />
+                    <field name="university_id"/>
+                    <field name="grade" type="measure" />
+                </graph>
+            </field>
+        </record>
+
+        <!-- List view -->
+        <record id="view_report_student_list" model="ir.ui.view">
+            <field name="name">university.report.student.list</field>
+            <field name="model">university.report.student</field>
+            <field name="arch" type="xml">
+                <list string="Student Reports">
+                    <field name="student_id" widget="many2one" />
+                    <field name="subject_id" widget="many2one" />
+                    <field name="teacher_id" widget="many2one" />
+                    <field name="university_id" widget="many2one" />
+                    <field name="department_id" widget="many2one" />
+                    <field name="tuition_id" widget="many2one" />
+                    <field name="grade" string="Grade" />
+                </list>
+            </field>
+        </record>
+
+        <!-- Action to open report student view -->
+        <record id="action_report_student" model="ir.actions.act_window">
+            <field name="name">Reports</field>
+            <field name="res_model">university.report.student</field>
+            <field name="view_mode">pivot,graph</field>
+            <field name="view_id" ref="view_report_student" />
+        </record>
+    </data>
+</odoo>

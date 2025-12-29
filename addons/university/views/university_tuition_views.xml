@@ -1,0 +1,113 @@
+<odoo>
+    <data>
+        <!-- Kanban view -->
+        <record id="view_tuition_kanban" model="ir.ui.view">
+            <field name="name">university.tuition.kanban</field>
+            <field name="model">university.tuition</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name" />
+                    <field name="student_id" />
+                    <field name="university_id" />
+                    <templates>
+                        <t t-name="card">
+                            <div class="p-2">
+                                <group>
+                                    <div>
+                                        <strong>
+                                            <field name="name" />
+                                        </strong>
+                                    </div>
+                                    <div>
+                                        <field name="student_id" />
+                                    </div>
+                                    <div>
+                                        <field name="subject_id" />
+                                    </div>
+                                </group>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_tuition_form" model="ir.ui.view">
+            <field name="name">university.tuition.form</field>
+            <field name="model">university.tuition</field>
+            <field name="arch" type="xml">
+                <form string="Tuition">
+                    <sheet>
+                        <div name="button_box">
+                            <button name="action_view_grades"
+                                type="object"
+                                string="Grade"
+                                class="oe_stat_button"
+                                invisible="grade_count == 0"
+                                icon="fa-file">
+                                <field name="grade_count" widget="statinfo" />
+                            </button>
+                        </div>
+                        <div class="oe_title mb24">
+                            <h1>
+                                <field name="name" readonly="1" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="university_id" />
+                                <field name="student_id" domain="dynamic_student_domain" />
+                            </group>
+                            <group>
+                                <field name="teacher_id" domain="dynamic_teacher_domain" />
+                                <field name="subject_id" domain="dynamic_subject_domain" />
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Grades" name="grades" autofocus="autofocus">
+                                <field name="grade_ids" mode="list">
+                                    <list>
+                                        <field name="exam_date" />
+                                        <field name="grade" />
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <field name="student_id" force_save="1" readonly="1" />
+                                            <field name="tuition_id" readonly="1" />
+                                            <field name="grade" />
+                                            <field name="exam_date" />
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List view -->
+        <record id="view_tuition_list" model="ir.ui.view">
+            <field name="name">university.tuition.list</field>
+            <field name="model">university.tuition</field>
+            <field name="arch" type="xml">
+                <list string="Tuitions">
+                    <field name="name" />
+                    <field name="student_id" />
+                    <field name="subject_id" />
+                    <field name="teacher_id" />
+                    <field name="university_id" />
+                </list>
+            </field>
+        </record>
+
+        <!-- Action to open tuitions views -->
+        <record id="action_tuition_default_views" model="ir.actions.act_window">
+            <field name="name">Tuitions</field>
+            <field name="res_model">university.tuition</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="view_id" ref="view_tuition_list" />
+        </record>
+    </data>
+</odoo>

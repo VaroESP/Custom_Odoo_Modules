@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Template student report pdf via email -->
+        <record id="student_mail_template" model="mail.template">
+            <field name="name">Report PDF</field>
+            <field name="model_id" ref="model_university_student"/>
+            <field name="subject">Report - {{ object.name }}</field>
+            <field name="email_from">{{ user.email }}</field>
+            <field name="email_to">{{ object.email }}</field>
+            <field name="body_html"><![CDATA[
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">                    
+                    <p><t t-if="object.id">Hello <t t-esc="object.name"/></t><t t-else="">Dear customer</t>,</p>
+                    
+                    <p>We attach your report</p>
+                    
+                    <p>If you have any questions, please contact us.</p>
+                    
+                    <hr style="border: none; border-top: 1px solid #eee;">
+                    <p style="color: #666; font-size: 12px;">
+                        This is an automated email, please do not reply.
+                    </p>
+                </div>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

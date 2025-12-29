@@ -1,0 +1,135 @@
+<odoo>
+    <data>
+        <!-- Template student pdf report -->
+        <template id="report_student">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="docs" />
+                <main>
+                    <div class="page">
+                        <div style="text-align: right">
+                            <p>
+                                <strong>
+                                    <span t-field="doc.name" />
+                                </strong>
+                                <br />
+                                <strong>
+                                    <span t-field="doc.university_id" />
+                                </strong>
+                            </p>
+                            <div class="address-block">
+                                <span t-if="doc.street">
+                                    <t t-esc="doc.street" />
+                                </span>
+                                <br />
+                                <span>
+                                    <t t-if="doc.zip">(<t t-esc="doc.zip" />) </t>
+                                    <t t-if="doc.city">
+                                        <t t-esc="doc.city" />
+                                    </t>
+                                </span>
+                                <br />
+                                <span>
+                                    <t t-if="doc.state_id"><t t-esc="doc.state_id.name" />, </t>
+                                    <t t-if="doc.country_id">
+                                        <t t-esc="doc.country_id.name" />
+                                    </t>
+                                </span>
+                            </div>
+                        </div>
+                        <h2 style="text-align: center">Student File</h2>
+                        <br />
+                        <br />
+                    </div>
+                    <div>
+                        <br />
+                        <br />
+                        <h3>SUMMARY TABLE</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                            <thead>
+                                <tr style="text-align: left">
+                                    <th>
+                                        <strong>Subject</strong>
+                                    </th>
+                                    <th>
+                                        <strong>Teacher</strong>
+                                    </th>
+                                    <th>
+                                        <strong>Average Grade</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="student_summary"
+                                    t-value="request.env['university.report.student.pdf'].get_student_grades_summary(doc.id)" />
+                                <t t-foreach="student_summary" t-as="summary">
+                                    <tr style="text-align: left">
+                                        <td>
+                                            <t t-esc="summary.subject_id.name" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="summary.teacher_id.name" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="str('%.1f' % summary.average_grade).replace('.', ',')" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <br />
+                        <br />
+                        <h3>COMPLETE TABLE</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                            <thead>
+                                <tr style="text-align: left">
+                                    <th>
+                                        <strong>Subject</strong>
+                                    </th>
+                                    <th>
+                                        <strong>Teacher</strong>
+                                    </th>
+                                    <th>
+                                        <strong>Grade</strong>
+                                    </th>
+                                    <th>
+                                        <strong>Creation Date</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.grade_ids" t-as="g">
+                                    <tr style="text-align: left">
+                                        <td>
+                                            <t t-esc="g.tuition_id.subject_id.name" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="g.tuition_id.teacher_id.name" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="str('%.1f' % g.grade).replace('.', ',')" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="g.create_date.strftime('%d/%m/%Y')" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+            </t>
+        </template>
+
+        <!-- Action to open student pdf report -->
+        <record id="action_report_student_pdf" model="ir.actions.report">
+            <field name="name">Student Report PDF</field>
+            <field name="model">university.student</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">university.report_student</field>
+            <field name="report_file">university.report_student</field>
+            <field name="print_report_name">'Report - %s' % (object.name or '')</field>
+            <field name="binding_model_id" ref="model_university_student" />
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

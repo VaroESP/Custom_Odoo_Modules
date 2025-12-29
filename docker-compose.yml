@@ -27,7 +27,7 @@ services:
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./addons:/mnt/extra-addons
-      - ./config:/etc/odoo
+      - ./config/odoo.conf:/etc/odoo/odoo.conf
     restart: unless-stopped
 
   pgadmin:

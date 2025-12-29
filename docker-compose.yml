@@ -20,7 +20,7 @@ services:
     ports:
       - "8069:8069"
     environment:
-      - HOST=db
+      - HOST=odoo-postgreSQL
       - PORT=5432
       - USER=odoo
       - PASSWORD=admin

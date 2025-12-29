@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Template to add clear filters button
+    when no product in domain -->
+    <template id="filter_products_price_inherit" name="Filter by Range"
+        inherit_id="website_sale.filter_products_price">
+        <xpath expr="//t[@t-set='is_disabled']" position="attributes">
+            <attribute name="t-value">available_min_price == available_max_price and has_range_attribute_active or (available_min_price == available_max_price == 0)</attribute>
+        </xpath>
+        <xpath expr="//div[@id='o_wsale_price_range_option']" position="before">
+            <div
+                t-if="is_disabled"
+                class="accordion-item rounded-0 border-top-0 py-3"
+            >
+                <a
+                    t-att-href="keep('/shop' + ('/category/' + slug(category)) if category else None, attribute_value=0, tags=0)"
+                    t-attf-class="btn btn-{{navClass}} d-flex align-items-center py-1"
+                    title="Clear Filters"
+                >
+                    <small class="mx-auto">
+                        <b>Clear Filters</b>
+                    </small>
+                    <i class="oi oi-close" role="presentation" />
+                </a>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Template to add the range filters to website -->
+    <template id="products_attributes_inherit" name="Filter by Range"
+        inherit_id="website_sale.products_attributes">
+
+        <xpath expr="//t[@t-foreach='attributes']//t/div[1]" position="attributes">
+            <attribute name="t-if">(a.value_ids and (len(a.value_ids) > 1)) or a.display_type ==
+                'range'</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-foreach='attributes']//t//div[hasclass('accordion-item')]//div"
+            position="inside">
+            <div t-elif="a.display_type == 'range'">
+                <t t-set="minimum" t-value="a.minimum or 0" />
+                <t t-set="maximum" t-value="a.maximum or 10" />
+                <t t-set="attr_id" t-value="str(a.id)" />
+                <t t-set="param_name_min" t-value="'current_min_' + attr_id" />
+                <t t-set="param_name_max" t-value="'current_max_' + attr_id" />
+                <t t-set="url_min" t-value="request.httprequest.args.get(param_name_min)" />
+                <t t-set="url_max" t-value="request.httprequest.args.get(param_name_max)" />
+                <t t-set="current_min"
+                    t-value="int(url_min) if url_min and url_min.isdigit() else minimum" />
+                <t t-set="current_max"
+                    t-value="int(url_max) if url_max and url_max.isdigit() else maximum" />
+                <div class="range-filter-container">
+                    <input
+                        type="range"
+                        multiple="multiple"
+                        class="form-range range-with-input custom-range-filter"
+                        t-att-data-attribute-id="attr_id"
+                        t-att-step="1"
+                        t-att-min="minimum"
+                        t-att-max="maximum"
+                        t-att-cmin="current_min"
+                        t-att-cmax="current_max"
+                        t-att-value="str(current_min) + ',' + str(current_max)"
+                    />
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

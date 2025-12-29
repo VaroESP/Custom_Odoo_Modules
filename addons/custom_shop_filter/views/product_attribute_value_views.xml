@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_product_attribute_value_list_inherit" model="ir.ui.view">
+            <field name="name">product.attribute.value.list.inherit</field>
+            <field name="model">product.attribute.value</field>
+            <field name="inherit_id" ref="product.product_attribute_value_list" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="minimum_value"
+                        invisible="context.get('parent_display_type') != 'range'" />
+                    <field name="maximum_value"
+                        invisible="context.get('parent_display_type') != 'range'" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_product_attribute_form_inherit" model="ir.ui.view">
+            <field name="name">product.attribute.form.inherit</field>
+            <field name="model">product.attribute</field>
+            <field name="inherit_id" ref="product.product_attribute_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_type']" position="after">
+                    <field name="minimum" invisible="display_type != 'range'" />
+                    <field name="maximum" invisible="display_type != 'range'" />
+                </xpath>
+                <xpath expr="//field[@name='value_ids']//list" position="attributes">
+                    <attribute name="attrs">{'column_invisible': [('parent.display_type', '!=',
+                        'range')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='value_ids']//list" position="inside">
+                    <field name="minimum_value" invisible="display_type != 'range'" />
+                    <field name="maximum_value" invisible="display_type != 'range'" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

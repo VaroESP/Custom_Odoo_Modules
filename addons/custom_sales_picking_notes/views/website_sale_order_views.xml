@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record id="view_sale_order_notes_form" model="ir.ui.view">
+            <field name="name">sale.order.notes.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook//page//group[@name='note_group']" position="after">
+                    <group>
+                        <div>
+                            <field name="notes" placeholder="Notes..." />
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="report_saleorder_document_record" model="ir.ui.view">
+            <field name="name">report.saleorder.document.notes</field>
+            <field name="type">qweb</field>
+            <field name="inherit_id" ref="sale.report_saleorder_document" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('page')]" position="inside">
+                    <t t-if="doc.notes">
+                        <div class="mt-4">
+                            <label>Notes</label>
+                            <p t-field="doc.notes" />
+                        </div>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="report_saleorder_document_website" model="ir.ui.view">
+            <field name="name">report.saleorder.document.website</field>
+            <field name="type">qweb</field>
+            <field name="inherit_id" ref="sale.sale_order_portal_content" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='content']" position="inside">
+                    <section t-if="sale_order.notes" class="mt-4">
+                        <h4 class="">Notes</h4>
+                        <hr class="mt-0 mb-1" />
+                        <div>
+                            <field t-field="sale_order.notes" />
+                        </div>
+                    </section>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

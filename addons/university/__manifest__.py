@@ -2,7 +2,7 @@
     "name": "University",
     "version": "18.0.0.1",
     "author": "varoESP",
-    "website": "https://github.com/VaroESP",
+    "website": "https://github.com/VaroESP/Custom_Odoo_Modules",
     "category": "Education",
     "depends": ["base", "mail", "website", "web"],
     "data": [

@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record id="view_stock_picking_notes_inherit_form" model="ir.ui.view">
+            <field name="name">stock.picking.inherit.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook//page//button[@name='action_put_in_pack']" position="after">
+                    <group>
+                        <group>
+                            <div class="o_row">
+                                <field name="notes" />
+                            </div>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="report_stock_picking_document_record" model="ir.ui.view">
+            <field name="name">report.stock.picking.document.notes</field>
+            <field name="type">qweb</field>
+            <field name="inherit_id" ref="stock.report_delivery_document" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('page')]" position="after">
+                    <t t-if="o.notes">
+                        <div class="mt-4">
+                            <span>
+                                <strong>Notes</strong>
+                            </span>
+                            <p t-field="o.notes" />
+                        </div>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

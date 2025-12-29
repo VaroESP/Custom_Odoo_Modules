@@ -26,8 +26,8 @@ services:
       - PASSWORD=admin
     volumes:
       - odoo-web-data:/var/lib/odoo
-      - ./addons:/mnt/extra-addons
-      - ./config:/etc/odoo
+      - ~/Custom_Odoo_Modules/addons:/mnt/extra-addons
+      - ~/Custom_Odoo_Modules/config:/etc/odoo
     restart: unless-stopped
 
   pgadmin:

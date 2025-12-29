@@ -24,6 +24,7 @@ services:
       - PORT=5432
       - USER=odoo
       - PASSWORD=admin
+      - ODOO_RC=/etc/odoo/odoo.conf
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./addons:/mnt/extra-addons

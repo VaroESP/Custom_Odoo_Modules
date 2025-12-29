@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Template to add Payment Discount values to subtotals -->
+    <template id="website_sale_total_inherit" inherit_id="website_sale.total">
+        <xpath expr="//tr[@id='order_total_untaxed']" position="before">
+            <tr t-if="website_sale_order.payment_have_discount"
+                id="order_payment_discount">
+                <td class="ps-0 pt-0 pb-2 border-0 text-muted" colspan="2">
+                    Payment discount
+                </td>
+                <td class="text-end pe-0 pt-0 pb-2 border-0">
+                    <span t-field="website_sale_order.discount"
+                        t-options='{"widget": "monetary", "display_currency": website_sale_order.currency_id}' />
+                </td>
+            </tr>
+        </xpath>
+    </template>
+
+</odoo>
